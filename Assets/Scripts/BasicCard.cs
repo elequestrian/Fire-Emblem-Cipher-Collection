@@ -27,8 +27,8 @@ namespace Com.SakuraStudios.FECipherCollection
         /// <summary>
         /// This method sets up the card to ensure all functionality is working as expected.
         /// </summary>
-        /// <param name="cardID">The number of the card to be loaded; used to set the face image for this card.</param>
-        public void SetUp(string cardID)
+        /// <param name="cardID">The ID of the card to be loaded; used to set the face image for this card.</param>
+        public void SetUp(CipherData.CardID cardID)
         {
             ChangeCardFace(cardID);
         }
@@ -40,11 +40,19 @@ namespace Com.SakuraStudios.FECipherCollection
         /// <summary>
         /// This method changes the texture used as the card's face by loading a new one from the Resource folder and assigning it to a node in the shader graph.
         /// </summary>
-        /// <param name="cardID">The number of the card face to be loaded; must match the name of a texture in the Resources folder.</param>
-        private void ChangeCardFace(string cardID)
+        /// <param name="cardID">The ID of the card face to be loaded; enum value must match the name of a texture in the Resources folder.</param>
+        private void ChangeCardFace(CipherData.CardID cardID)
         {
             Material cardFrontMaterial = GetComponent<MeshRenderer>().materials[2];
-            cardFrontMaterial.SetTexture("_CardFront", Resources.Load("Card Faces/" + cardID, typeof(Texture)) as Texture);
+            
+            //Load texture based on cardID to use as the front.
+            Texture cardFrontTexture = Resources.Load("Card Faces/" + cardID.ToString(), typeof(Texture)) as Texture;
+
+            //Double-check that the texture loaded, and if so set it as the new face card.  Without the if, the texture is replaced by a standard white texture.
+            if (cardFrontTexture != null)
+                cardFrontMaterial.SetTexture("_CardFront", cardFrontTexture);
+            else
+                Debug.LogError("BasicCard ChangeCardFace(): Front card texture did not load for " + cardID.ToString());
         }
 
         #endregion

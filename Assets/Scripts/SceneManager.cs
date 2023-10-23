@@ -12,9 +12,9 @@ namespace Com.SakuraStudios.FECipherCollection
         // Start is called before the first frame update
         void Start()
         {
-            LoadCard("B01-056HN");
-            LoadCard("B01-003ST+", new Vector3(3, 0, 0));
-            LoadCard("B01-003ST", new Vector3(6, 0, 0));
+            LoadCard(CipherData.CardID.B01N056HN);
+            LoadCard(CipherData.CardID.B01N003STp, new Vector3(3, 0, 0));
+            //LoadCard(CipherData.CardID.B01N003ST, new Vector3(6, 0, 0));
         }
 
         // Update is called once per frame
@@ -30,9 +30,9 @@ namespace Com.SakuraStudios.FECipherCollection
         /// <summary>
         /// This method creates a new card in the scene at a given location by loading it from the Resource folder.
         /// </summary>
-        /// <param name="cardID">The number of the card to be loaded; must match the name of a prefab in the referenced folder.</param>
+        /// <param name="cardID">The ID of the card to be loaded; enum value must match the name of a prefab in the referenced folder.</param>
         /// <param name="loadPosition">The position where the card object should be instantiated.</param>
-        private BasicCard LoadCard(string cardID, Vector3 loadPosition)
+        private BasicCard LoadCard(CipherData.CardID cardID, Vector3 loadPosition)
         {
             
             //Quaternion is set up for a default 2D project. 
@@ -43,7 +43,7 @@ namespace Com.SakuraStudios.FECipherCollection
             //Check if the load was successful.  Errors might be thrown earlier.
             if (loadedObject == null)
             {
-                Debug.LogError(cardID + " was not loaded by LoadCard().  Check the Resources folder for the prefab.");
+                Debug.LogError(cardID.ToString() + " was not loaded by LoadCard().  Check the Resources folder for the prefab.");
                 return null;
             }
 
@@ -62,7 +62,7 @@ namespace Com.SakuraStudios.FECipherCollection
         /// This method creates a new card in the scene at the origin by loading it from the Resource folder.
         /// </summary>
         /// <param name="cardID">The number of the card to be loaded; must match the name of a prefab in the referenced folder.</param>
-        private BasicCard LoadCard(string cardID)
+        private BasicCard LoadCard(CipherData.CardID cardID)
         {
             return LoadCard(cardID, Vector3.zero);
         }
