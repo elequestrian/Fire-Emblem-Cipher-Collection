@@ -33,8 +33,17 @@ namespace Com.SakuraStudios.FECipherCollection
         // List of all valid CardIDs current set up to function in the game.
         public enum CardID
         {
-            B01N003STp,
-            B01N056HN
+            B01N001,        // Marth 5
+            B01N001p,       // Marth 5 holo
+            B01N002,        // Marth 2 
+            B01N003,        // Marth 1
+            B01N003p,       // Marth 1 holo 
+            B01N056,        // Lucina 1 
+            P01N003,        // Marth 1
+            P01N012,        // Marth 2
+            P01N013,        // Marth 3
+            S01N001,        // Marth 4
+            S01N001p        // Marth 4 holo
         }
     }
 }

@@ -1,26 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
     public class SceneManager : MonoBehaviour
     {
+        [SerializeField] private Button packButton;
+
 
         #region Unity Callbacks
 
         // Start is called before the first frame update
         void Start()
         {
-            LoadCard(CipherData.CardID.B01N056HN);
-            LoadCard(CipherData.CardID.B01N003STp, new Vector3(3, 0, 0));
-            //LoadCard(CipherData.CardID.B01N003ST, new Vector3(6, 0, 0));
+
+            //PullPack();
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void PullPack()
+        {
+            //Turn off the button
+            packButton.interactable = false;
+
+
+            //Load cards
+            LoadCard(CipherData.CardID.B01N001p, new Vector3(-7, -2, 0));
+            LoadCard(CipherData.CardID.B01N001, new Vector3(-3.5f, -2, 0));
+            LoadCard(CipherData.CardID.B01N002, new Vector3(0, -2, 0));
+            LoadCard(CipherData.CardID.B01N056, new Vector3(3.5f, -2, 0));
+            LoadCard(CipherData.CardID.S01N001, new Vector3(7, -2, 0));
+            LoadCard(CipherData.CardID.P01N003, new Vector3(-7, 2, 0));
+            LoadCard(CipherData.CardID.B01N003p, new Vector3(-3.5f, 2, 0));
+            LoadCard(CipherData.CardID.S01N001p, new Vector3(0, 2, 0));
+            LoadCard(CipherData.CardID.P01N012, new Vector3(3.5f, 2, 0));
+            LoadCard(CipherData.CardID.P01N013, new Vector3(7, 2, 0));
         }
 
         #endregion
