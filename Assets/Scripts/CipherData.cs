@@ -45,5 +45,18 @@ namespace Com.SakuraStudios.FECipherCollection
             S01N001,        // Marth 4
             S01N001p        // Marth 4 holo
         }
+
+        // List of all card rarities
+        public enum CardRarity
+        {
+            N,      //Normal
+            HN,     //High Normal
+            R,      //Rare
+            Rp,     //Rare+
+            SR,     //Super Rare
+            SRp,    //Super Rare+
+            pX,     //Secret Rare
+            HR      //Hero Rare
+        }
     }
 }
