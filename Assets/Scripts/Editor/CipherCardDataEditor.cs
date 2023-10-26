@@ -59,12 +59,13 @@ namespace Com.SakuraStudios.FECipherCollection
         SerializedProperty baseSupportProperty;
         SerializedProperty baseRangeProperty;
 
-        bool skillFoldout = false;
-        bool colorFoldout = false;
-        bool genderFoldout = false;
-        bool weaponFoldout = false;
-        bool unitFoldout = false;
-        bool rangeFoldout = false;
+        // Expand all foldouts by default
+        bool skillFoldout = true;
+        bool colorFoldout = true;
+        bool genderFoldout = true;
+        bool weaponFoldout = true;
+        bool unitFoldout = true;
+        bool rangeFoldout = true;
 
         void OnEnable()
         {
@@ -96,12 +97,14 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             serializedObject.Update();
 
+            EditorStyles.textField.wordWrap = true; // This sets the wordwrap value of the properties
+
             EditorGUILayout.PropertyField(cardIDProperty);
             EditorGUILayout.PropertyField(cardRarityProperty);
 
             EditorGUILayout.PropertyField(cardNumberProperty);
             EditorGUILayout.PropertyField(charTitleProperty);
-            EditorGUILayout.PropertyField(charQuoteProperty);
+            EditorGUILayout.PropertyField(charQuoteProperty, GUILayout.ExpandHeight(true));
             EditorGUILayout.PropertyField(cardIllustratorProperty);
             EditorGUILayout.PropertyField(cardSkillsProperty, true, GUILayout.ExpandHeight(true));
             skillFoldout = ShowCipherList(skillFoldout, skillTypesProperty, typeof(CipherData.SkillTypesEnum));
@@ -147,8 +150,8 @@ namespace Com.SakuraStudios.FECipherCollection
             if (foldout)
             {
                 EditorGUI.indentLevel += 1;
-                SerializedProperty size = list.FindPropertyRelative("Array.size");
-                EditorGUILayout.PropertyField(size);
+                //SerializedProperty size = list.FindPropertyRelative("Array.size");
+                //EditorGUILayout.PropertyField(size);
                 string[] enumNames = Enum.GetNames(cipherEnum);
                 for (int i = 0; i < list.arraySize; i++)
                 {

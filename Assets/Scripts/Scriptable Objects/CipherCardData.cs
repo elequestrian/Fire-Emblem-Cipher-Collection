@@ -17,6 +17,8 @@ namespace Com.SakuraStudios.FECipherCollection
         
         public string cardNumber;
         public string charTitle;
+        // Tagging charQuote with the multiline attribute to allow for easier readability in the editor.
+        [Multiline]
         public string charQuote;
         public string cardIllustrator;
 
