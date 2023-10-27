@@ -22,7 +22,8 @@ MonoBehaviour:
   cardSkills:
   - Hero's Paean [ACT] [TAP 3, Send 1 '"Marth"' card from your hand to the Retreat
     Area] Until the end of your opponent's next turn, all allies gain +30 attack.
-  - Falchion [ALWAYS] If this unit is attacking a <Dragon>, this unit gains +20 attack.
+  - Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit gains
+    +20 attack.
   skillTypes: 000000000000000000000000000000
   charName: Marth
   classTitle: Lodestar

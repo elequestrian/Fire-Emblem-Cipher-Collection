@@ -56,7 +56,11 @@ namespace Com.SakuraStudios.FECipherCollection
             SR,     //Super Rare
             SRp,    //Super Rare+
             pX,     //Secret Rare
-            HR      //Hero Rare
+            HR,     //Hero Rare
+            PR,     //Promo
+            PRp,    //Promo Holo
+            ST,     //Starter
+            STp     //Starter Holo
         }
     }
 }

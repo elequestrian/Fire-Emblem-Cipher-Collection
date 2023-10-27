@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N001
+  m_Name: S01N001
   m_EditorClassIdentifier: 
-  cardID: 0
-  cardRarity: 4
-  cardNumber: B01-001SR
-  charTitle: Savior of His Realm
-  charQuote: '''"Lend me your might, Falchion! Grant me the strength to confine Medeus
-    to the shadows for all eternity!"'''
-  cardIllustrator: Maki Hakoda
+  cardID: 9
+  cardRarity: 10
+  cardNumber: S01-001ST
+  charTitle: Star and Savior
+  charQuote: '''"I will crush Dolhr. I swear it on this emblem of fire!"'''
+  cardIllustrator: Yusuke Kozaki
   cardSkills:
-  - Hero's Paean [ACT] [TAP 3, Send 1 '"Marth"' card from your hand to the Retreat
-    Area] Until the end of your opponent's next turn, all allies gain +30 attack.
+  - "Prince of Light [TRIGGER] [ONCE PER TURN] When you deploy an ally with a Deployment\r
+    Cost 2 or lower, you may choose 1 enemy in the Back Line, and move them."
   - Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit gains
     +20 attack.
   skillTypes: 000000000000000000000000000000
   charName: Marth
   classTitle: Lodestar
-  deploymentCost: 5
+  deploymentCost: 4
   canPromote: 1
-  promotionCost: 4
+  promotionCost: 3
   cardColor: 0100000000000000
   charGender: 0100
   charWeaponType: 01000000000000000000
