@@ -16,7 +16,30 @@ namespace Com.SakuraStudios.FECipherCollection
         // Start is called before the first frame update
         void Start()
         {
+            
+            List<CipherCardData> cardDataList = new List<CipherCardData>();
 
+            foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
+            {
+                CipherCardData cardData = LoadCardData(cardID);
+                
+                Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
+                //cardDataList.Add(cardData);
+            }
+            
+            
+            
+            
+            //CipherCardData[] cardDataArray = Resources.FindObjectsOfTypeAll<CipherCardData>();
+
+            //Debug.Log(cardDataArray.Length);
+
+            /*
+            foreach (CipherCardData cardData in Resources.FindObjectsOfTypeAll<CipherCardData>())
+            {
+                Debug.Log(cardData.ToString());
+            }
+            */
             //PullPack();
         }
 
@@ -91,6 +114,11 @@ namespace Com.SakuraStudios.FECipherCollection
         private BasicCard LoadCard(CipherData.CardID cardID)
         {
             return LoadCard(cardID, Vector3.zero);
+        }
+
+        private CipherCardData LoadCardData(CipherData.CardID cardID)
+        {
+             return Resources.Load<CipherCardData>("Card Data/" + cardID.ToString());
         }
 
         /*
