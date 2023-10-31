@@ -9,38 +9,40 @@ namespace Com.SakuraStudios.FECipherCollection
     public class SceneManager : MonoBehaviour
     {
         [SerializeField] private Button packButton;
-
+        [SerializeField] private Transform[] cardLocationList = new Transform[10];
+        List<CipherCardData> cardDataList = new List<CipherCardData>();
+        List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
+        List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
 
         #region Unity Callbacks
 
         // Start is called before the first frame update
         void Start()
         {
-            
-            List<CipherCardData> cardDataList = new List<CipherCardData>();
 
+            // Fill up the card data list
             foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
             {
                 CipherCardData cardData = LoadCardData(cardID);
                 
                 Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
-                //cardDataList.Add(cardData);
-            }
-            
-            
-            
-            
-            //CipherCardData[] cardDataArray = Resources.FindObjectsOfTypeAll<CipherCardData>();
+                
+                //is this necessary?
+                cardDataList.Add(cardData);
 
-            //Debug.Log(cardDataArray.Length);
-
-            /*
-            foreach (CipherCardData cardData in Resources.FindObjectsOfTypeAll<CipherCardData>())
-            {
-                Debug.Log(cardData.ToString());
+                //Divide up the cards into categories
+                if (cardData.cardRarity == CipherData.CardRarity.N || cardData.cardRarity == CipherData.CardRarity.HN 
+                    || cardData.cardRarity == CipherData.CardRarity.PR || cardData.cardRarity == CipherData.CardRarity.ST)
+                {
+                    lowerTierCards.Add(cardID);
+                }
+                // cardRarity = R, Rp, SR, SRp, pX, HR, PRp, STp
+                else
+                    upperTierCards.Add(cardID);
             }
-            */
-            //PullPack();
+
+            
+
         }
 
         // Update is called once per frame
@@ -58,18 +60,37 @@ namespace Com.SakuraStudios.FECipherCollection
             //Turn off the button
             packButton.interactable = false;
 
+            //Randomize the pack
+            List<CipherData.CardID> packCards = new List<CipherData.CardID>(9);
+
+            for (int i = 0; i <= 9; i++)
+            {
+                //choose 5 lower tier cards, then 5 higher tier cards
+                if (i <= 4)
+                    packCards.Add(lowerTierCards[UnityEngine.Random.Range(0, lowerTierCards.Count - 1)]);
+                else
+                    packCards.Add(upperTierCards[UnityEngine.Random.Range(0, upperTierCards.Count - 1)]);
+            }
+
 
             //Load cards
-            LoadCard(CipherData.CardID.B01N001p, new Vector3(-7, -2, 0));
-            LoadCard(CipherData.CardID.B01N001, new Vector3(-3.5f, -2, 0));
-            LoadCard(CipherData.CardID.B01N002, new Vector3(0, -2, 0));
-            LoadCard(CipherData.CardID.B01N056, new Vector3(3.5f, -2, 0));
-            LoadCard(CipherData.CardID.S01N001, new Vector3(7, -2, 0));
-            LoadCard(CipherData.CardID.P01N003, new Vector3(-7, 2, 0));
-            LoadCard(CipherData.CardID.B01N003p, new Vector3(-3.5f, 2, 0));
-            LoadCard(CipherData.CardID.S01N001p, new Vector3(0, 2, 0));
-            LoadCard(CipherData.CardID.P01N012, new Vector3(3.5f, 2, 0));
-            LoadCard(CipherData.CardID.P01N013, new Vector3(7, 2, 0));
+            LoadCard(packCards[0], new Vector3(-7, -2, 0));
+            LoadCard(packCards[1], new Vector3(-3.5f, -2, 0));
+            LoadCard(packCards[2], new Vector3(0, -2, 0));
+            LoadCard(packCards[3], new Vector3(3.5f, -2, 0));
+            LoadCard(packCards[4], new Vector3(7, -2, 0));
+            LoadCard(packCards[5], new Vector3(-7, 2, 0));
+            LoadCard(packCards[6], new Vector3(-3.5f, 2, 0));
+            LoadCard(packCards[7], new Vector3(0, 2, 0));
+            LoadCard(packCards[8], new Vector3(3.5f, 2, 0));
+            LoadCard(packCards[9], new Vector3(7, 2, 0));
+
+            /*
+            for (int i = 0; i < packCards.Count; i++)
+            {
+                LoadCard(packCards[i], cardLocationList[i]);
+            }
+            */
         }
 
         #endregion
@@ -87,6 +108,7 @@ namespace Com.SakuraStudios.FECipherCollection
             //Quaternion is set up for a default 2D project. 
             //Debug.Log("Trying to load " + cardNumber + " from Resources.");
             GameObject loadedObject = Instantiate(Resources.Load("Sample Card", typeof(GameObject)), loadPosition, Quaternion.Euler(-90, 0, 0)) as GameObject;
+            
             //Debug.Log(loadedObject + " has been successfully loaded.");
 
             //Check if the load was successful.  Errors might be thrown earlier.
