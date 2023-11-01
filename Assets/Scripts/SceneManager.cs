@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +10,11 @@ namespace Com.SakuraStudios.FECipherCollection
     public class SceneManager : MonoBehaviour
     {
         [SerializeField] private Button packButton;
-        [SerializeField] private Transform[] cardLocationList = new Transform[10];
+        [SerializeField] private Transform[] cardLocationArray = new Transform[10];
         List<CipherCardData> cardDataList = new List<CipherCardData>();
         List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
         List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
+        bool pulledOnce = false;
 
         #region Unity Callbacks
 
@@ -57,6 +59,11 @@ namespace Com.SakuraStudios.FECipherCollection
 
         public void PullPack()
         {
+            if (pulledOnce)
+            {
+                RemoveCards();
+            }
+            
             //Turn off the button
             packButton.interactable = false;
 
@@ -72,8 +79,16 @@ namespace Com.SakuraStudios.FECipherCollection
                     packCards.Add(upperTierCards[UnityEngine.Random.Range(0, upperTierCards.Count - 1)]);
             }
 
-
             //Load cards
+            for (int i = 0; i < packCards.Count; i++)
+            {
+                if (i < cardLocationArray.Length)
+                    LoadCard(packCards[i], cardLocationArray[i]);
+                else
+                    Debug.LogError("More cards in packCards than locations in cardLocationArray.  Check sizes."); 
+            }
+
+            /*
             LoadCard(packCards[0], new Vector3(-7, -2, 0));
             LoadCard(packCards[1], new Vector3(-3.5f, -2, 0));
             LoadCard(packCards[2], new Vector3(0, -2, 0));
@@ -84,13 +99,12 @@ namespace Com.SakuraStudios.FECipherCollection
             LoadCard(packCards[7], new Vector3(0, 2, 0));
             LoadCard(packCards[8], new Vector3(3.5f, 2, 0));
             LoadCard(packCards[9], new Vector3(7, 2, 0));
-
-            /*
-            for (int i = 0; i < packCards.Count; i++)
-            {
-                LoadCard(packCards[i], cardLocationList[i]);
-            }
             */
+            
+            pulledOnce = true;
+
+            //Turn the button back on
+            packButton.interactable = true;
         }
 
         #endregion
@@ -122,11 +136,6 @@ namespace Com.SakuraStudios.FECipherCollection
             BasicCard loadedCard = loadedObject.GetComponent<BasicCard>();
             loadedCard.SetUp(cardID);
             return loadedCard;
-
-
-            //BasicCard cardToAdd = loadedObject.GetComponent<BasicCard>();
-            //deck.Add(cardToAdd);
-            //Debug.Log(cardToAdd.ToString() + " has been added to the deck.");
         }
 
         /// <summary>
@@ -137,6 +146,51 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             return LoadCard(cardID, Vector3.zero);
         }
+
+        /// <summary>
+        /// This method creates a new card in the scene as a child to a given parent.  The card will be positioned relative to the parent transform not world space.
+        /// </summary>
+        /// <param name="cardID">The ID of the card to be loaded; enum value must match the name of a prefab in the referenced folder.</param>
+        /// <param name="parentTransform">The transform of the parent for the card object.</param>
+        private BasicCard LoadCard(CipherData.CardID cardID, Transform parentTransform)
+        {
+            //Debug.Log("Trying to load " + cardNumber + " from Resources.");
+            GameObject loadedObject = Instantiate(Resources.Load("Sample Card", typeof(GameObject)), parentTransform, false) as GameObject;
+
+            //Debug.Log(loadedObject + " has been successfully loaded.");
+
+            //Check if the load was successful.  Errors might be thrown earlier.
+            if (loadedObject == null)
+            {
+                Debug.LogError(cardID.ToString() + " was not loaded by LoadCard().  Check the Resources folder for the prefab.");
+                return null;
+            }
+
+            //Set up the card including its correct face texture.
+            BasicCard loadedCard = loadedObject.GetComponent<BasicCard>();
+            loadedCard.SetUp(cardID);
+            return loadedCard;
+        }
+
+        /// <summary>
+        /// This method removes the card objects from the scene to enable another pack pull.
+        /// </summary>
+        private void RemoveCards()
+        {
+            foreach (Transform cardLocation in cardLocationArray)
+            {
+                BasicCard cardScript = cardLocation.GetComponentInChildren<BasicCard>();
+                if (cardScript != null)
+                {
+                    Destroy(cardScript.gameObject);
+                }
+                else
+                {
+                    Debug.LogWarning("No BasicCard found under " + cardLocation.ToString());
+                }
+            }
+        }
+
 
         private CipherCardData LoadCardData(CipherData.CardID cardID)
         {

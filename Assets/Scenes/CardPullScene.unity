@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packButton: {fileID: 396154670}
-  cardLocationList:
+  cardLocationArray:
   - {fileID: 1444889325}
   - {fileID: 1074312745}
   - {fileID: 634818377}
