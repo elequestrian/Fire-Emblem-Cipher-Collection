@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
-    public class SceneManager : MonoBehaviour
+    public class PullSceneManager : MonoBehaviour
     {
         [SerializeField] private Button packButton;
         [SerializeField] private Transform[] cardLocationArray = new Transform[10];
