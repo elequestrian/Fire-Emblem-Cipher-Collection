@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: P01N013
+  m_Name: S01N004p
   m_EditorClassIdentifier: 
-  cardID: 16
-  cardRarity: 9
-  cardNumber: P01-013PR
-  charTitle: Prince in Hiding
-  charQuote: '''"Steady, Caeda. You did well to come find us. Altea''s bravest knights
-    aren''t about to hand Talys to that flock of seafowl."'''
-  cardIllustrator: Sachiko Wada
+  cardID: 23
+  cardRarity: 11
+  cardNumber: S01-004ST+
+  charTitle: Wielder of a Heavy Blade
+  charQuote: '''"I figured we''d have to settle the score sooner or later..."'''
+  cardIllustrator: Akira Fujikawa
   cardSkills:
-  - Heroic Prince [ACT] [ FLIP 2] Choose 1 enemy, and move them.
-  - Rapier [ALWAYS] If this unit is attacking a <Beast> or <Armored> unit, this unit
-    gains +10 attack.
+  - Captain of the Royal Talysian Army [TRIGGER] Each time an ally with a Deployment
+    Cost of 2 or lower is deployed, until the end of the turn, this unit and that
+    ally gain +10 attack.
+  - Levin Sword [ACT] [ FLIP 1] Until the end of the turn, this unit loses -10 attack,
+    and acquires <Tome> affinity and range 1-2.
   skillTypes: 000000000000000000000000000000
-  charName: Marth
-  classTitle: Lodestar
+  charName: Ogma
+  classTitle: Hero
   deploymentCost: 3
   canPromote: 1
   promotionCost: 2
@@ -34,5 +35,5 @@ MonoBehaviour:
   charWeaponType: 01000000000000000000
   unitTypes: 000000000000
   baseAttack: 60
-  baseSupport: 20
+  baseSupport: 10
   baseRange: 010000

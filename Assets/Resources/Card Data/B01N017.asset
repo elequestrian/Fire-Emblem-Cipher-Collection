@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: P01N012
+  m_Name: B01N017
   m_EditorClassIdentifier: 
-  cardID: 15
-  cardRarity: 8
-  cardNumber: P01-012PR
-  charTitle: Prince of a Fallen Land
-  charQuote: '''"With gallant hearts, one and all, bring vict''ry forth!"'''
-  cardIllustrator: 
+  cardID: 10
+  cardRarity: 0
+  cardNumber: B01-017N
+  charTitle: Capable Gladiator
+  charQuote: '''"Swinging your sword without purpose... You''re worse than an animal."'''
+  cardIllustrator: nNekoR
   cardSkills:
-  - "Hero\u2019s Disposition [ALWAYS] If you have 2 or more other <Red> allies, this
-    unit gains +10 attack."
+  - Fateful Opponent [ALWAYS] If this unit's support is not named "Caeda" or "Navarre",
+    the support fails.
   skillTypes: 000000000000000000000000000000
-  charName: Marth
-  classTitle: Lord
+  charName: Ogma
+  classTitle: Mercenary
   deploymentCost: 2
   canPromote: 0
   promotionCost: 0
@@ -31,6 +31,6 @@ MonoBehaviour:
   charGender: 0100
   charWeaponType: 01000000000000000000
   unitTypes: 000000000000
-  baseAttack: 50
-  baseSupport: 20
+  baseAttack: 70
+  baseSupport: 10
   baseRange: 010000

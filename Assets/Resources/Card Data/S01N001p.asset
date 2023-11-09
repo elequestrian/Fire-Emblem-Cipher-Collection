@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: S01N001p
   m_EditorClassIdentifier: 
-  cardID: 9
+  cardID: 18
   cardRarity: 11
   cardNumber: S01-001ST+
   charTitle: Star and Savior
@@ -20,7 +20,7 @@ MonoBehaviour:
   cardIllustrator: Yusuke Kozaki
   cardSkills:
   - "Prince of Light [TRIGGER] [ONCE PER TURN] When you deploy an ally with a Deployment\r
-    Cost 2 or lower, you may choose 1 enemy in the Back Line, and move them."
+    Cost 2 or lower, you may choose 1 enemy in the Back Line and move them."
   - Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit gains
     +20 attack.
   skillTypes: 000000000000000000000000000000
