@@ -11,6 +11,8 @@ namespace Com.SakuraStudios.FECipherCollection
         [SerializeField] private Scrollbar cardListScrollbar;
         [SerializeField] private Transform cardGridTransform;
 
+        private List<CipherData.CardID> allCardIDs = new List<CipherData.CardID>();
+
         // Position variables
         float initialX = -6.1f;
         float initialY = 3.1f;
@@ -24,40 +26,9 @@ namespace Com.SakuraStudios.FECipherCollection
         // Start is called before the first frame update
         void Start()
         {
-            
-            //Populate card list method
-            Vector3 newCardPosition = new Vector3(initialX, initialY, 0);
-            int columnCounter = 1;
-            
-
-            // Create and position all cards 
-            foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
-            {
-                //check if we need to move back to the first column for the next card
-                if (columnCounter > maxColumns)
-                {
-                    newCardPosition.x = initialX;
-                    newCardPosition.y -= incrementY;
-                    columnCounter = 1;
-                    rowCounter++;
-                }
-
-                LoadCard(cardID, cardGridTransform, newCardPosition);
-
-                newCardPosition.x += incrementX;
-                columnCounter++;
-
-            }
-
-            /*
-            //Setup Scrollbar method
-            if (rowCounter <= 2)
-                cardListScrollbar.size = 1;
-            else if (rowCounter == 3)
-                cardListScrollbar.size = 0.95f;
-            else if (rowCounter >= 4)
-                cardListScrollbar.size = 0.9f;
-            */
+            //Set up the Collection's card list
+            allCardIDs.AddRange(CipherData.CardID.GetValues(typeof(CipherData.CardID)));
+            PopulateCardList(allCardIDs);
         }
 
         // Update is called once per frame
@@ -88,6 +59,43 @@ namespace Com.SakuraStudios.FECipherCollection
         #endregion
 
         #region Private Methods
+
+        /// <summary>
+        /// This method creates and places the cards from a provided list in the collection screen viewer.
+        /// </summary>
+        /// <param name="cardIDs">The card list to add to the viewer.</param>
+        private void PopulateCardList(List<CipherData.CardID> cardIDs)
+        {
+            rowCounter = 1;
+            Vector3 newCardPosition = new Vector3(initialX, initialY, 0);
+            int columnCounter = 1;
+
+            // Create and position all cards 
+            foreach (CipherData.CardID cardID in cardIDs)
+            {
+                //check if we need to move back to the first column for the next card
+                if (columnCounter > maxColumns)
+                {
+                    newCardPosition.x = initialX;
+                    newCardPosition.y -= incrementY;
+                    columnCounter = 1;
+                    rowCounter++;
+                }
+
+                LoadCard(cardID, cardGridTransform, newCardPosition);
+
+                newCardPosition.x += incrementX;
+                columnCounter++;
+            }
+
+            //Setup Card list's Scrollbar
+            if (rowCounter <= 2)
+                cardListScrollbar.size = 1;
+            else if (rowCounter >= 3)
+            {
+                cardListScrollbar.size = 10.2f / (0.8f + rowCounter * incrementY);
+            }
+        }
 
         /// <summary>
         /// This method creates a new card in the scene as a child to a given parent and at a given location relative to the parent transform.
