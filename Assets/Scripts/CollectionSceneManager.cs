@@ -10,6 +10,7 @@ namespace Com.SakuraStudios.FECipherCollection
     {
         [SerializeField] private Scrollbar cardListScrollbar;
         [SerializeField] private Transform cardGridTransform;
+        [SerializeField] private CardObjectPool cardObjectPool;
 
         private List<CipherData.CardID> allCardIDs = new List<CipherData.CardID>();
 
@@ -82,7 +83,7 @@ namespace Com.SakuraStudios.FECipherCollection
                     rowCounter++;
                 }
 
-                BasicCard.LoadCard(cardID, cardGridTransform, newCardPosition);
+                cardObjectPool.GetCard(cardID, cardGridTransform, newCardPosition);
 
                 newCardPosition.x += incrementX;
                 columnCounter++;

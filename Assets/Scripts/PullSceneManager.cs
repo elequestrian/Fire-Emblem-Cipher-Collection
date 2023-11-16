@@ -11,6 +11,8 @@ namespace Com.SakuraStudios.FECipherCollection
     {
         [SerializeField] private Button packButton;
         [SerializeField] private Transform[] cardLocationArray = new Transform[10];
+        [SerializeField] private CardObjectPool cardObjectPool;
+
         List<CipherCardData> cardDataList = new List<CipherCardData>();
         List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
         List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
@@ -83,7 +85,7 @@ namespace Com.SakuraStudios.FECipherCollection
             for (int i = 0; i < packCards.Count; i++)
             {
                 if (i < cardLocationArray.Length)
-                    BasicCard.LoadCard(packCards[i], cardLocationArray[i]);
+                    cardObjectPool.GetCard(packCards[i], cardLocationArray[i]);
                 else
                     Debug.LogError("More cards in packCards than locations in cardLocationArray.  Check sizes."); 
             }
@@ -121,7 +123,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 BasicCard cardScript = cardLocation.GetComponentInChildren<BasicCard>();
                 if (cardScript != null)
                 {
-                    Destroy(cardScript.gameObject);
+                    cardObjectPool.ReturnCard(cardScript);
                 }
                 else
                 {
