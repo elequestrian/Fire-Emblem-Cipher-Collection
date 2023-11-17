@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
-    public class BasicCard : MonoBehaviour
+    public class BasicCard : MonoBehaviour, IPointerClickHandler
     {
         private CipherCardData cardData;
         
+        public CipherData.CardID CardID { get { return cardData.cardID; } }
+
+
         #region Unity Callbacks
 
         // Start is called before the first frame update
@@ -22,6 +26,15 @@ namespace Com.SakuraStudios.FECipherCollection
         void Update()
         {
 
+        }
+
+        #endregion
+
+        #region IPointerHandler Interface Implementation
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            CardInfoPanelController.Instance.DisplayCard(this);
         }
 
         #endregion
