@@ -224,8 +224,6 @@ namespace Com.SakuraStudios.FECipherCollection
             //adds a card's range to the cardInfo
             cardInfo.Append(PrintRange(card));
 
-            cardInfo.AppendLine("\n").Append(card.CharQuote);
-
             if (card.CardSkills.Length > 0)
             {
                 for (int i = 0; i < card.CardSkills.Length; i++)
@@ -233,8 +231,6 @@ namespace Com.SakuraStudios.FECipherCollection
                     cardInfo.AppendLine("\n").Append(card.CardSkills[i]);
                 }
             }
-
-            cardInfo.AppendLine("\n").Append("Illust. " + card.CardIllustrator);
 
             //add skill change information if present on the card.
             if (card.SkillChangeTracker.Count > 0)
@@ -250,6 +246,9 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
             }
 
+            // Finish off by adding the character quote and illustrator
+            cardInfo.AppendLine("\n").Append(card.CharQuote);
+            cardInfo.AppendLine().Append("Illust. " + card.CardIllustrator);
 
             return cardInfo.ToString();
         }

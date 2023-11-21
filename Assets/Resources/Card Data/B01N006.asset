@@ -19,10 +19,10 @@ MonoBehaviour:
   charQuote: '''"Marth, come quickly!"'''
   cardIllustrator: Doji Shiki
   cardSkills:
-  - "Princess's Charisma [ACT] [TAP, Tap 1 other ally] Choose 1 other ally. Until
-    the\r end of the turn, that unit gains +10 attack."
-  - "[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You\r
-    may move that ally."
+  - Princess's Charisma [ACT] [TAP, Tap 1 other ally] Choose 1 other ally. Until
+    the end of the turn, that unit gains +10 attack.
+  - '[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You
+    may move that ally.'
   skillTypes: 010000000000000000000000000000
   charName: Caeda
   classTitle: Pegasus Knight

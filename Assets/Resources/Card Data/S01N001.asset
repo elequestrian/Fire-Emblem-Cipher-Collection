@@ -19,8 +19,8 @@ MonoBehaviour:
   charQuote: '''"I will crush Dolhr. I swear it on this emblem of fire!"'''
   cardIllustrator: Yusuke Kozaki
   cardSkills:
-  - "Prince of Light [TRIGGER] [ONCE PER TURN] When you deploy an ally with a Deployment\r
-    Cost 2 or lower, you may choose 1 enemy in the Back Line and move them."
+  - Prince of Light [TRIGGER] [ONCE PER TURN] When you deploy an ally with a Deployment
+    Cost 2 or lower, you may choose 1 enemy in the Back Line and move them.
   - Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit gains
     +20 attack.
   skillTypes: 000000000000000000000000000000

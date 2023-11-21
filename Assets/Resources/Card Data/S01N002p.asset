@@ -20,8 +20,8 @@ MonoBehaviour:
     swiftly."'''
   cardIllustrator: Doji Shiki
   cardSkills:
-  - "Wyvern Whip [TRIGGER] Each time an ally with a Deployment Cost of 2 or lower
-    is\r deployed, you may choose as many allies as you wish and move them."
+  - Wyvern Whip [TRIGGER] Each time an ally with a Deployment Cost of 2 or lower
+    is deployed, you may choose as many allies as you wish and move them.
   - Javelin [ACT] [FLIP 1] Until the end of the turn, this unit acquires range 1-2.
   skillTypes: 000000000000000000000000000000
   charName: Caeda

@@ -19,10 +19,10 @@ MonoBehaviour:
   charQuote: '''"The king has bid me and my men join your army."'''
   cardIllustrator: Meisai
   cardSkills:
-  - "Mercenary Captain [ALWAYS] During your turn, if you have 2 or more other allies\r
-    with a Deployment Cost of 2 or less, this unit gains +20 attack."
-  - "[ATK] Attack Emblem [SUPP] Until the end of this combat, your attacking unit\r
-    gains +20 attack."
+  - Mercenary Captain [ALWAYS] During your turn, if you have 2 or more other allies
+    with a Deployment Cost of 2 or less, this unit gains +20 attack.
+  - '[ATK] Attack Emblem [SUPP] Until the end of this combat, your attacking unit
+    gains +20 attack.'
   skillTypes: 010000000000000000000000000000
   charName: Ogma
   classTitle: Mercenary
