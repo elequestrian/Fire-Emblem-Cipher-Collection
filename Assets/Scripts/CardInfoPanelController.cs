@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
@@ -13,6 +14,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
         [SerializeField] private BasicCard displayCard;             //The main card image of the panel.
         [SerializeField] private TextMeshProUGUI displayText;       //The display text of the InfoPanel.
+        [SerializeField] private Scrollbar cardTextScrollbar;
 
         // Awake is always called before any Start functions
         void Awake()
@@ -54,7 +56,7 @@ namespace Com.SakuraStudios.FECipherCollection
             displayText.text = TranslateCard(card);
 
             // Set the scroll bar to the top of the card's information.
-            //MoveScrollBarToValue(1f);
+            cardTextScrollbar.value = 1f;
         }
         #endregion
 
