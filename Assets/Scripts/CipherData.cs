@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Static data class that sets the standard values for many concepts fundamental to the FE Cipher Card Game.
 namespace Com.SakuraStudios.FECipherCollection

@@ -83,7 +83,8 @@ namespace Com.SakuraStudios.FECipherCollection
                     rowCounter++;
                 }
 
-                cardObjectPool.GetCard(cardID, cardGridTransform, newCardPosition);
+                BasicCard listedCard = cardObjectPool.GetCard(cardID, cardGridTransform, newCardPosition);
+                listedCard.OnClickEvent.AddListener(CardInfoPanelController.Instance.DisplayCard);
 
                 newCardPosition.x += incrementX;
                 columnCounter++;

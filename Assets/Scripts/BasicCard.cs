@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace Com.SakuraStudios.FECipherCollection
@@ -9,7 +10,7 @@ namespace Com.SakuraStudios.FECipherCollection
     public class BasicCard : MonoBehaviour, IPointerClickHandler
     {
         private CipherCardData cardData;
-
+        public MyBasicCardEvent OnClickEvent = new MyBasicCardEvent();
 
         //These card stats are held locally in case they get changed by other cards.
         protected int localDeploymentCost;
@@ -111,7 +112,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            CardInfoPanelController.Instance.DisplayCard(this);
+            OnClickEvent.Invoke(this);
         }
 
         #endregion
@@ -176,5 +177,13 @@ namespace Com.SakuraStudios.FECipherCollection
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Creates a UnityEvent class that takes a BasicCard as input.
+    /// </summary>
+    [System.Serializable]
+    public class MyBasicCardEvent : UnityEvent<BasicCard>
+    {
     }
 }

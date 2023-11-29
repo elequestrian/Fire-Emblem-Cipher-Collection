@@ -77,6 +77,9 @@ namespace Com.SakuraStudios.FECipherCollection
         /// <param name="returnedCard">The BasicCard to be returned.</param>
         public void ReturnCard(BasicCard returnedCard)
         {
+            //Remove all listeners from the events on the card.
+            returnedCard.OnClickEvent.RemoveAllListeners();
+            
             ReturnObject(returnedCard.gameObject);
         }
 
