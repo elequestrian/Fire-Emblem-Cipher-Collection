@@ -49,7 +49,7 @@ namespace Com.SakuraStudios.FECipherCollection
         // Method called by a BasicCard when clicked to display the card information. 
         public void DisplayCard(BasicCard card)
         {
-            //Set the large display card up as the same as a clicked card.
+            //Set the large display card up the same as a clicked card.
             displayCard.SetUp(card.CardID);
             
             // Format the card's information and store it to be displayed.
@@ -79,10 +79,14 @@ namespace Com.SakuraStudios.FECipherCollection
             cardInfo.Append(card.CardNumber + " " + card.CharName + ": " + card.CharTitle +
                 "\n" + card.ClassTitle + "/Cost: ");
 
-            cardInfo.Append(ColorTextIfDifferent(card.DeploymentCost.ToString(), card.GetCardData.deploymentCost.ToString()));
+            //cardInfo.Append(ColorTextIfDifferent(card.DeploymentCost.ToString(), card.GetCardData.deploymentCost.ToString()));
+            cardInfo.Append(card.DeploymentCost.ToString());
 
             if (card.Promotable)
-                cardInfo.Append("(").Append(ColorTextIfDifferent(card.PromotionCost.ToString(), card.GetCardData.promotionCost.ToString())).Append(")");
+            {
+                //cardInfo.Append("(").Append(ColorTextIfDifferent(card.PromotionCost.ToString(), card.GetCardData.promotionCost.ToString())).Append(")");
+                cardInfo.Append("(").Append(card.PromotionCost.ToString()).Append(")");
+            }
 
             cardInfo.Append("\n");
 
@@ -97,6 +101,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 if (Enum.TryParse(colorList[i], out colorValue))
                     if (Enum.IsDefined(typeof(CipherData.ColorsEnum), colorValue))
                     {
+                        /*
                         //If the color is on the local card and not the cardData, print that color in green text.
                         if (card.CardColorArray[(int)colorValue] == card.GetCardData.cardColor[(int)colorValue])
                         {
@@ -106,11 +111,13 @@ namespace Com.SakuraStudios.FECipherCollection
                         {
                             cardInfo.Append("<color=green>" + colorValue.ToString() + "</color>" + "/");
                         }
+                        */
+                        cardInfo.Append(colorValue.ToString() + "/");
                     }
                     else
-                        Debug.LogWarning(colorList[i] + " is not an underlying value of the ColorsEnum enumeration.");
+                        Debug.LogWarning(card.CardID.ToString() + "'s " + colorList[i] + " is not an underlying value of the ColorsEnum enumeration.");
                 else
-                    Debug.LogWarning(colorList[i] + "is not a member of the Colors enumeration.");
+                    Debug.LogWarning(card.CardID.ToString() + "'s " + colorList[i] + "is not a member of the Colors enumeration.");
             }
 
             //Adds the final color to the cardInfo
@@ -121,6 +128,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 if (Enum.TryParse(colorList[colorList.Count - 1], out colorValue))
                     if (Enum.IsDefined(typeof(CipherData.ColorsEnum), colorValue))
                     {
+                        /*
                         //If the color is on the local card and not the cardData, print that color in green text.
                         if (card.CardColorArray[(int)colorValue] == card.GetCardData.cardColor[(int)colorValue])
                         {
@@ -130,15 +138,18 @@ namespace Com.SakuraStudios.FECipherCollection
                         {
                             cardInfo.Append("<color=green>" + colorValue.ToString() + "</color>");
                         }
+                        */
+                        cardInfo.Append(colorValue.ToString());
                     }
                     else
-                        Debug.LogWarning(colorList[colorList.Count - 1] + " is not an underlying value of the ColorsEnum enumeration.");
+                        Debug.LogWarning(card.CardID.ToString() + "'s " + colorList[colorList.Count - 1] + " is not an underlying value of the ColorsEnum enumeration.");
                 else
-                    Debug.LogWarning(colorList[colorList.Count - 1] + "is not a member of the Colors enumeration.");
+                    Debug.LogWarning(card.CardID.ToString() + "'s " + colorList[colorList.Count - 1] + "is not a member of the Colors enumeration.");
             }
             //If no colors on card, then print "Colorless".
             else if (colorList.Count == 0)
             {
+                /*
                 //Check if there were colors on the original cardData
                 int n = 0;
                 for (int i = 0; i < card.GetCardData.cardColor.Length; i++)
@@ -157,8 +168,9 @@ namespace Com.SakuraStudios.FECipherCollection
                 {
                     cardInfo.Append("<color=green>Colorless</color>");
                 }
+                */
+                cardInfo.Append("Colorless");
             }
-
 
             //adds a well-formatted list of the genders on the card to the cardInfo.
             //Loops through each possible gender
@@ -167,6 +179,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //if the gender is on the card then add the gender name to the list
                 if (card.CharGenderArray[i])
                 {
+                    /*
                     //Check if the gender was on the original card data and if not print it in green text.
                     if (card.GetCardData.charGender[i])
                     {
@@ -176,6 +189,8 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         cardInfo.Append("/<color=green>").Append(((CipherData.GendersEnum)i).ToString()).Append("</color>");
                     }
+                    */
+                    cardInfo.Append("/").Append(((CipherData.GendersEnum)i).ToString());
                 }
             }
 
@@ -186,6 +201,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //if the weapon is on the card then add the weapon name to the list
                 if (card.CharWeaponArray[i])
                 {
+                    /*
                     //Check if the weapon was on the original card data and if not print it in green text.
                     if (card.GetCardData.charWeaponType[i])
                     {
@@ -195,6 +211,8 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         cardInfo.Append("/<color=green>").Append(((CipherData.WeaponsEnum)i).ToString()).Append("</color>");
                     }
+                    */
+                    cardInfo.Append("/").Append(((CipherData.WeaponsEnum)i).ToString());
                 }
             }
 
@@ -205,6 +223,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //if the unit type is on the card then add the type name to the list
                 if (card.UnitTypeArray[i])
                 {
+                    /*
                     //Check if the unit type was on the original card data and if not print it in green text.
                     if (card.GetCardData.unitTypes[i])
                     {
@@ -214,14 +233,17 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         cardInfo.Append("/<color=green>").Append(((CipherData.UnitTypesEnum)i).ToString()).Append("</color>");
                     }
+                    */
+                    cardInfo.Append("/").Append(((CipherData.UnitTypesEnum)i).ToString());
                 }
             }
 
             cardInfo.Append("\n");
 
-            cardInfo.Append(ColorTextIfDifferent(card.CurrentAttackValue.ToString(), card.GetCardData.baseAttack.ToString())).Append(" ATK/");
-            cardInfo.Append(ColorTextIfDifferent(card.CurrentSupportValue.ToString(), card.GetCardData.baseSupport.ToString())).Append(" SUPP/");
-
+            //cardInfo.Append(ColorTextIfDifferent(card.CurrentAttackValue.ToString(), card.GetCardData.baseAttack.ToString())).Append(" ATK/");
+            //cardInfo.Append(ColorTextIfDifferent(card.CurrentSupportValue.ToString(), card.GetCardData.baseSupport.ToString())).Append(" SUPP/");
+            cardInfo.Append(card.BaseAttack.ToString()).Append(" ATK/");
+            cardInfo.Append(card.BaseSupport.ToString()).Append(" SUPP/");
 
             //adds a card's range to the cardInfo
             cardInfo.Append(PrintRange(card));
@@ -234,6 +256,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
             }
 
+            /*
             //add skill change information if present on the card.
             if (card.SkillChangeTracker.Count > 0)
             {
@@ -247,6 +270,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
                 }
             }
+            */
 
             // Finish off by adding the character quote and illustrator
             cardInfo.AppendLine("\n").Append(card.CharQuote);
@@ -255,6 +279,7 @@ namespace Com.SakuraStudios.FECipherCollection
             return cardInfo.ToString();
         }
 
+        /*
         /// <summary>
         /// This method prints the given text in a specified color if it differs from given reference text.
         /// </summary>
@@ -275,13 +300,14 @@ namespace Com.SakuraStudios.FECipherCollection
             else
                 return "<color=" + color + ">" + textToPrint + "</color>";
         }
+        */
 
         //Formats a card's range information nicely.
         private string PrintRange(BasicCard card)
         {
             string rangeText = "";
             int numEntries = 0;
-            int originalEntries = 0;            //helps with checks to confirm differences between the current card and the original.
+            //int originalEntries = 0;            //helps with checks to confirm differences between the current card and the original.
             bool firstEntry = true;
 
             for (int i = 0; i < card.BaseRangeArray.Length; i++)
@@ -290,16 +316,19 @@ namespace Com.SakuraStudios.FECipherCollection
                 {
                     numEntries++;
                 }
+                /*
                 if (card.GetCardData.baseRange[i])
                 {
                     originalEntries++;
                 }
+                */
             }
 
             switch (numEntries)
             {
                 //no range entries
                 case 0:
+                    /*
                     //checks for a difference between the original cardData and the current card's range.
                     //If a difference is found, color the text in green.
                     if (originalEntries == 0)
@@ -310,6 +339,8 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         rangeText += "<color=green>NO</color>";
                     }
+                    */
+                    rangeText += "NO";
                     break;
 
                 //A single range entry that needs to be posted.  Loop through the array to find the entry.
@@ -318,6 +349,7 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         if (card.BaseRangeArray[i])
                         {
+                            /*
                             //checks for a difference between the original cardData and the current card's range.
                             //If a difference is found, color the text in green.
                             if (card.GetCardData.baseRange[i])
@@ -328,6 +360,8 @@ namespace Com.SakuraStudios.FECipherCollection
                             {
                                 rangeText += "<color=green>" + (i + 1) + "</color>";
                             }
+                            */
+                            rangeText += (i + 1);
                         }
                     }
                     break;
@@ -340,6 +374,7 @@ namespace Com.SakuraStudios.FECipherCollection
                     {
                         if (card.BaseRangeArray[n])
                         {
+                            /*
                             //checks for a difference between the original cardData and the current card's range.
                             //If a difference is found, color the text in green.
                             if (card.GetCardData.baseRange[n])
@@ -350,6 +385,8 @@ namespace Com.SakuraStudios.FECipherCollection
                             {
                                 rangeText += "<color=green>" + (n + 1) + "</color>";
                             }
+                            */
+                            rangeText += (n + 1);
                             firstEntry = false;
                         }
                         n++;
@@ -361,6 +398,7 @@ namespace Com.SakuraStudios.FECipherCollection
                         {
                             rangeText += ", ";
 
+                            /*
                             //checks for a difference between the original cardData and the current card's range.
                             //If a difference is found, color the text in green.
                             if (card.GetCardData.baseRange[n])
@@ -371,6 +409,8 @@ namespace Com.SakuraStudios.FECipherCollection
                             {
                                 rangeText += "<color=green>" + (n + 1) + "</color>";
                             }
+                            */
+                            rangeText += (n + 1);
                         }
                         n++;
                     }

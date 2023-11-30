@@ -12,6 +12,7 @@ namespace Com.SakuraStudios.FECipherCollection
         private CipherCardData cardData;
         public MyBasicCardEvent OnClickEvent = new MyBasicCardEvent();
 
+        /*
         //These card stats are held locally in case they get changed by other cards.
         protected int localDeploymentCost;
         protected bool localCanPromote;
@@ -23,6 +24,7 @@ namespace Com.SakuraStudios.FECipherCollection
         protected int localBaseAttack;
         protected int localBaseSupport;
         protected bool[] localBaseRangeArray;
+        */
 
         // A List that holds information about the skills impacting a card.
         protected List<string> skillChangeTracker = new List<string>();
@@ -49,7 +51,7 @@ namespace Com.SakuraStudios.FECipherCollection
         public virtual string ClassTitle { get { return cardData.classTitle; } }
         public virtual bool[] SkillTypes { get { return cardData.skillTypes; } }
 
-
+        /*
         public virtual int DeploymentCost { get { return localDeploymentCost; } }
         public virtual bool Promotable { get { return localCanPromote; } }
         public virtual int PromotionCost { get { return localPromotionCost; } }
@@ -60,6 +62,18 @@ namespace Com.SakuraStudios.FECipherCollection
         public virtual int BaseAttack { get { return localBaseAttack; } }
         public virtual int BaseSupport { get { return localBaseSupport; } }
         public virtual bool[] BaseRangeArray { get { return localBaseRangeArray; } }
+        */
+        public virtual int DeploymentCost { get { return cardData.deploymentCost; } }
+        public virtual bool Promotable { get { return cardData.canPromote; } }
+        public virtual int PromotionCost { get { return cardData.promotionCost; } }
+        public virtual bool[] CardColorArray { get { return cardData.cardColor; } }
+        public virtual bool[] CharGenderArray { get { return cardData.charGender; } }
+        public virtual bool[] CharWeaponArray { get { return cardData.charWeaponType; } }
+        public virtual bool[] UnitTypeArray { get { return cardData.unitTypes; } }
+        public virtual int BaseAttack { get { return cardData.baseAttack; } }
+        public virtual int BaseSupport { get { return cardData.baseSupport; } }
+        public virtual bool[] BaseRangeArray { get { return cardData.baseRange; } }
+
 
         public virtual int CurrentAttackValue { get { return BaseAttack + attackModifier; } }       //Returns the current attack stat including skill modifiers.
         public virtual int CurrentSupportValue { get { return BaseSupport + supportModifier; } }    //Returns the current support stat including skill modifiers.
@@ -143,6 +157,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
             // Set local values based on standard card data.
             // We need to clone the arrays to make sure we aren't just copying a reference, but creating a new distinct array we can mess with.
+            /*
             localDeploymentCost = cardData.deploymentCost;
             localPromotionCost = cardData.promotionCost;
             localCardColorArray = (bool[])cardData.cardColor.Clone();
@@ -153,6 +168,7 @@ namespace Com.SakuraStudios.FECipherCollection
             localBaseSupport = cardData.baseSupport;
             localBaseRangeArray = (bool[])cardData.baseRange.Clone();
             localCanPromote = cardData.canPromote;
+            */
         }
 
         #endregion
