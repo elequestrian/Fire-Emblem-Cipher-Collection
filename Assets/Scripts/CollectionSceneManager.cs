@@ -13,6 +13,7 @@ namespace Com.SakuraStudios.FECipherCollection
         [SerializeField] private CardObjectPool cardObjectPool;
 
         private List<CipherData.CardID> allCardIDs = new List<CipherData.CardID>();
+        private List<CipherData.CardID> displayCardIDs = new List<CipherData.CardID>();
 
         // Position variables
         float initialX = -6.1f;
@@ -29,6 +30,18 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             //Set up the Collection's card list
             allCardIDs.AddRange(CipherData.CardID.GetValues(typeof(CipherData.CardID)));
+            
+            /*
+            foreach (CipherData.CardID cardID in allCardIDs)
+            {
+                CipherCardData cardData = Resources.Load<CipherCardData>("Card Data/" + cardID.ToString());
+                if (cardData != null && cardData.altArtIDs.Length > 0 && displayCardIDs.Contains(cardData.altArtIDs[0]))
+                { 
+
+                }
+            }
+            */
+
             PopulateCardList(allCardIDs);
         }
 

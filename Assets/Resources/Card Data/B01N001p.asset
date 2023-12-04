@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 1
   cardRarity: 5
+  altArtIDs: 00000000
   cardNumber: B01-001SR+
   charTitle: Savior of His Realm
   charQuote: '''"Lend me your might, Falchion! Grant me the strength to confine Medeus

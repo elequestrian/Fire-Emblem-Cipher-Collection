@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 3
   cardRarity: 1
+  altArtIDs: 04000000
   cardNumber: B01-003HN
   charTitle: Altean Prince
   charQuote: '''"I know what I must do, now that Medeus has revived and restored

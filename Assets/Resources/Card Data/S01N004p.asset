@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 23
   cardRarity: 11
+  altArtIDs: 16000000
   cardNumber: S01-004ST+
   charTitle: Wielder of a Heavy Blade
   charQuote: '''"I figured we''d have to settle the score sooner or later..."'''

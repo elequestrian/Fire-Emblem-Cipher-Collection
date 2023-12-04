@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 6
   cardRarity: 5
+  altArtIDs: 05000000
   cardNumber: B01-004SR+
   charTitle: Love-Extolling Wings
   charQuote: '''"Tell me: do you believe in love? Do you have someone special out

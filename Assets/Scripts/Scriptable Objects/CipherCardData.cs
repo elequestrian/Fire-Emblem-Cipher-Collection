@@ -7,6 +7,7 @@ namespace Com.SakuraStudios.FECipherCollection
 {
     // This object stores the data associated with each card, almost like the printed text on the card itself.
     // Data is loaded from scriptable objects to allow different instantiations of cards to load the same data easily and always know what their original values were.
+
     // NOTE: Remember to update the CipherCardDataEditor if you add anything here so it's displayed in the Inspector.
     // Adding the CreateAssetMenu attribute to allow us to create this scriptable object more easily in the Unity Editor.
     [CreateAssetMenu(menuName = "Cipher Card Data")]
@@ -14,6 +15,7 @@ namespace Com.SakuraStudios.FECipherCollection
     {
         public CipherData.CardID cardID;
         public CipherData.CardRarity cardRarity;
+        public CipherData.CardID[] altArtIDs;
         
         public string cardNumber;
         public string charTitle;

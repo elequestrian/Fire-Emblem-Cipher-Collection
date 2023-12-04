@@ -13,7 +13,8 @@ namespace Com.SakuraStudios.FECipherCollection
     {
         /* CardData reference
             public CipherData.CardID cardID;
-            public CipherData.CardRarity cardRarity;   
+            public CipherData.CardRarity cardRarity;
+           public CipherData.CardID[] altArtIDs;
         
            public string cardNumber;
            public string charTitle;
@@ -38,6 +39,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
         SerializedProperty cardIDProperty;
         SerializedProperty cardRarityProperty;
+        SerializedProperty altArtIDsProperty;
 
         SerializedProperty cardNumberProperty;
         SerializedProperty charTitleProperty;
@@ -71,6 +73,7 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             cardIDProperty = serializedObject.FindProperty("cardID");
             cardRarityProperty = serializedObject.FindProperty("cardRarity");
+            altArtIDsProperty = serializedObject.FindProperty("altArtIDs");
             
             cardNumberProperty = serializedObject.FindProperty("cardNumber"); ;
             charTitleProperty = serializedObject.FindProperty("charTitle");
@@ -101,6 +104,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
             EditorGUILayout.PropertyField(cardIDProperty);
             EditorGUILayout.PropertyField(cardRarityProperty);
+            EditorGUILayout.PropertyField(altArtIDsProperty, true);
 
             EditorGUILayout.PropertyField(cardNumberProperty);
             EditorGUILayout.PropertyField(charTitleProperty);
