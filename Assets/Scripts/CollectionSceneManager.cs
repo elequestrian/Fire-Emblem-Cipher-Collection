@@ -31,18 +31,22 @@ namespace Com.SakuraStudios.FECipherCollection
             //Set up the Collection's card list
             allCardIDs.AddRange(CipherData.CardID.GetValues(typeof(CipherData.CardID)));
             
-            /*
+            
             foreach (CipherData.CardID cardID in allCardIDs)
             {
                 CipherCardData cardData = Resources.Load<CipherCardData>("Card Data/" + cardID.ToString());
-                if (cardData != null && cardData.altArtIDs.Length > 0 && displayCardIDs.Contains(cardData.altArtIDs[0]))
-                { 
-
+                
+                if (cardData != null)
+                {
+                    //check that this ID either doesn't have an alt art or the alt art is not already present in the list.
+                    if (cardData.altArtIDs == null || (cardData.altArtIDs.Length > 0 && !displayCardIDs.Contains(cardData.altArtIDs[0])))
+                    {
+                        displayCardIDs.Add(cardID);
+                    }
                 }
             }
-            */
-
-            PopulateCardList(allCardIDs);
+            
+            PopulateCardList(displayCardIDs);
         }
 
         // Update is called once per frame

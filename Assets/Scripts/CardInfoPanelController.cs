@@ -15,6 +15,7 @@ namespace Com.SakuraStudios.FECipherCollection
         [SerializeField] private BasicCard displayCard;             //The main card image of the panel.
         [SerializeField] private TextMeshProUGUI displayText;       //The display text of the InfoPanel.
         [SerializeField] private Scrollbar cardTextScrollbar;
+        [SerializeField] private Button altArtButton;
 
         // Awake is always called before any Start functions
         void Awake()
@@ -57,6 +58,18 @@ namespace Com.SakuraStudios.FECipherCollection
 
             // Set the scroll bar to the top of the card's information.
             cardTextScrollbar.value = 1f;
+
+            // Set up the alt art button.
+            altArtButton.onClick.RemoveAllListeners();
+            if (card.GetCardData.altArtIDs == null)
+            { 
+                altArtButton.interactable = false;
+            }
+            else
+            {
+                altArtButton.interactable = true;
+                altArtButton.onClick.AddListener(SwapDisplayToAltArt);
+            }
         }
         #endregion
 
@@ -425,6 +438,15 @@ namespace Com.SakuraStudios.FECipherCollection
             rangeText += " RNG";
 
             return rangeText;
+        }
+
+        private void SwapDisplayToAltArt()
+        {
+            if (displayCard.GetCardData.altArtIDs != null)
+            {
+                displayCard.SetUp(displayCard.GetCardData.altArtIDs[0]);
+                DisplayCard(displayCard);
+            }
         }
 
         #endregion

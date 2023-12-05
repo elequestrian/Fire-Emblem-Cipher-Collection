@@ -2264,6 +2264,7 @@ MonoBehaviour:
   displayCard: {fileID: 769701837}
   displayText: {fileID: 1458515322}
   cardTextScrollbar: {fileID: 92588807}
+  altArtButton: {fileID: 1955435039}
 --- !u!1001 &1423205375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3088,7 +3089,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1955435040}
   m_OnClick:
     m_PersistentCalls:
@@ -3382,7 +3383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Change Art
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
