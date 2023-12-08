@@ -444,8 +444,13 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             if (displayCard.GetCardData.altArtIDs != null)
             {
+                float scrollBarPosition = cardTextScrollbar.value;
+
                 displayCard.SetUp(displayCard.GetCardData.altArtIDs[0]);
                 DisplayCard(displayCard);
+
+                // Set the scroll bar to the top of the card's information.
+                cardTextScrollbar.value = scrollBarPosition;
             }
         }
 
