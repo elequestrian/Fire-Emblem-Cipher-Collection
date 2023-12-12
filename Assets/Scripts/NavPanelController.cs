@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
-    public class MainMenuManager : MonoBehaviour
+    public class NavPanelController : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
         {
-
+            //DontDestroyOnLoad(gameObject);
         }
 
         // Update is called once per frame
@@ -19,14 +19,9 @@ namespace Com.SakuraStudios.FECipherCollection
 
         }
 
-        public void OpenCollectionScene()
+        public void OpenMainMenuScene()
         {
-            SceneManager.LoadScene(1);
-        }
-
-        public void OpenPullScene()
-        {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
     }
 }

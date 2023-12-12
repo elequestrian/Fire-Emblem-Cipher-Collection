@@ -17,7 +17,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
         // Position variables
         float initialX = -6.1f;
-        float initialY = 3.1f;
+        float initialY = 2.7f;
         float incrementX = 2.5f;
         float incrementY = 3.4f;
         int maxColumns = 4;
