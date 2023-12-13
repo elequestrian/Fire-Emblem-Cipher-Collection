@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N016
+  m_EditorClassIdentifier: 
+  cardID: 9
+  cardRarity: 4
+  cardNumber: B01-016SR
+  charTitle: Talysian Wargod
+  charQuote: '''"You saved me, Princess. I don''t just owe you my life... I owe you
+    something much more precious."'''
+  cardIllustrator: Hiroaki
+  cardSkills:
+  - Battlefield Breath [ACT] [Tap 1 other ally] Until the end of the turn, this unit
+    gains +10 attack.
+  - "Wargod's Blow [TRIGGER] When this unit attacks, if this unit has 100 or more
+    attack, then until the end of the turn, the number of Orbs this unit\u2019s attacks
+    will destroy becomes 2."
+  skillTypes: 000000000000000000000000000000
+  charName: Ogma
+  classTitle: Hero
+  deploymentCost: 4
+  canPromote: 1
+  promotionCost: 3
+  cardColor: 0100000000000000
+  charGender: 0100
+  charWeaponType: 01000000000000000000
+  unitTypes: 000000000000
+  baseAttack: 70
+  baseSupport: 10
+  baseRange: 010000

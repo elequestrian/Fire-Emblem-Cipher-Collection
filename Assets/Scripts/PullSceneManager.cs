@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 namespace Com.SakuraStudios.FECipherCollection
 {
-    public class SceneManager : MonoBehaviour
+    public class PullSceneManager : MonoBehaviour
     {
         [SerializeField] private Button packButton;
         [SerializeField] private Transform[] cardLocationArray = new Transform[10];
+        [SerializeField] private CardObjectPool cardObjectPool;
+
         List<CipherCardData> cardDataList = new List<CipherCardData>();
         List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
         List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
@@ -83,7 +85,7 @@ namespace Com.SakuraStudios.FECipherCollection
             for (int i = 0; i < packCards.Count; i++)
             {
                 if (i < cardLocationArray.Length)
-                    LoadCard(packCards[i], cardLocationArray[i]);
+                    cardObjectPool.GetCard(packCards[i], cardLocationArray[i]);
                 else
                     Debug.LogError("More cards in packCards than locations in cardLocationArray.  Check sizes."); 
             }
@@ -112,67 +114,6 @@ namespace Com.SakuraStudios.FECipherCollection
         #region Private Methods
 
         /// <summary>
-        /// This method creates a new card in the scene at a given location by loading it from the Resource folder.
-        /// </summary>
-        /// <param name="cardID">The ID of the card to be loaded; enum value must match the name of a prefab in the referenced folder.</param>
-        /// <param name="loadPosition">The position where the card object should be instantiated.</param>
-        private BasicCard LoadCard(CipherData.CardID cardID, Vector3 loadPosition)
-        {
-            
-            //Quaternion is set up for a default 2D project. 
-            //Debug.Log("Trying to load " + cardNumber + " from Resources.");
-            GameObject loadedObject = Instantiate(Resources.Load("Sample Card", typeof(GameObject)), loadPosition, Quaternion.Euler(-90, 0, 0)) as GameObject;
-            
-            //Debug.Log(loadedObject + " has been successfully loaded.");
-
-            //Check if the load was successful.  Errors might be thrown earlier.
-            if (loadedObject == null)
-            {
-                Debug.LogError(cardID.ToString() + " was not loaded by LoadCard().  Check the Resources folder for the prefab.");
-                return null;
-            }
-
-            //Set up the card including its correct face texture.
-            BasicCard loadedCard = loadedObject.GetComponent<BasicCard>();
-            loadedCard.SetUp(cardID);
-            return loadedCard;
-        }
-
-        /// <summary>
-        /// This method creates a new card in the scene at the origin by loading it from the Resource folder.
-        /// </summary>
-        /// <param name="cardID">The number of the card to be loaded; must match the name of a prefab in the referenced folder.</param>
-        private BasicCard LoadCard(CipherData.CardID cardID)
-        {
-            return LoadCard(cardID, Vector3.zero);
-        }
-
-        /// <summary>
-        /// This method creates a new card in the scene as a child to a given parent.  The card will be positioned relative to the parent transform not world space.
-        /// </summary>
-        /// <param name="cardID">The ID of the card to be loaded; enum value must match the name of a prefab in the referenced folder.</param>
-        /// <param name="parentTransform">The transform of the parent for the card object.</param>
-        private BasicCard LoadCard(CipherData.CardID cardID, Transform parentTransform)
-        {
-            //Debug.Log("Trying to load " + cardNumber + " from Resources.");
-            GameObject loadedObject = Instantiate(Resources.Load("Sample Card", typeof(GameObject)), parentTransform, false) as GameObject;
-
-            //Debug.Log(loadedObject + " has been successfully loaded.");
-
-            //Check if the load was successful.  Errors might be thrown earlier.
-            if (loadedObject == null)
-            {
-                Debug.LogError(cardID.ToString() + " was not loaded by LoadCard().  Check the Resources folder for the prefab.");
-                return null;
-            }
-
-            //Set up the card including its correct face texture.
-            BasicCard loadedCard = loadedObject.GetComponent<BasicCard>();
-            loadedCard.SetUp(cardID);
-            return loadedCard;
-        }
-
-        /// <summary>
         /// This method removes the card objects from the scene to enable another pack pull.
         /// </summary>
         private void RemoveCards()
@@ -182,7 +123,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 BasicCard cardScript = cardLocation.GetComponentInChildren<BasicCard>();
                 if (cardScript != null)
                 {
-                    Destroy(cardScript.gameObject);
+                    cardObjectPool.ReturnCard(cardScript);
                 }
                 else
                 {

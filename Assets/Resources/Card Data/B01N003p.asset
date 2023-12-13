@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 4
   cardRarity: 11
+  altArtIDs: 03000000
   cardNumber: B01-003ST+
   charTitle: Altean Prince
   charQuote: '''"I know what I must do, now that Medeus has revived and restored
@@ -22,8 +23,8 @@ MonoBehaviour:
   cardSkills:
   - Young Hero [ACT] [TAP, Tap 1 other ally] Choose 1 enemy, and move them. This
     skill cannot be used unless this unit is in the Front Line.
-  - "'[ATK] Hero Emblem [SUPP] Until the end of this combat, the number of Orbs that\r
-    your <Red> attacking unit''s attack will destroy becomes 2.'"
+  - '[ATK] Hero Emblem [SUPP] Until the end of this combat, the number of Orbs that
+    your <Red> attacking unit''''s attack will destroy becomes 2.'
   skillTypes: 010000000000000000000000000000
   charName: Marth
   classTitle: Lord

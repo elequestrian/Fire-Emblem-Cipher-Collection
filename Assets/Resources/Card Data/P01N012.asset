@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: P01N012
   m_EditorClassIdentifier: 
-  cardID: 7
+  cardID: 15
   cardRarity: 8
   cardNumber: P01-012PR
   charTitle: Prince of a Fallen Land

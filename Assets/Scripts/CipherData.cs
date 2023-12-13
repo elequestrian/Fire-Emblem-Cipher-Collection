@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Static data class that sets the standard values for many concepts fundamental to the FE Cipher Card Game.
 namespace Com.SakuraStudios.FECipherCollection
@@ -38,12 +39,25 @@ namespace Com.SakuraStudios.FECipherCollection
             B01N002,        // Marth 2 
             B01N003,        // Marth 1
             B01N003p,       // Marth 1 holo 
+            B01N004,        // Caeda 4
+            B01N004p,       // Caeda 4 holo
+            B01N005,        // Caeda 2
+            B01N006,        // Caeda 1
+            B01N016,        // Ogma 4
+            B01N017,        // Ogma 2
+            B01N018,        // Ogma 1
             B01N056,        // Lucina 1 
             P01N003,        // Marth 1
+            P01N006,        // Jagan 3
             P01N012,        // Marth 2
             P01N013,        // Marth 3
             S01N001,        // Marth 4
-            S01N001p        // Marth 4 holo
+            S01N001p,       // Marth 4 holo
+            S01N002,        // Caeda 3
+            S01N002p,       // Caeda 3 holo
+            S01N003,        // Jagen 3
+            S01N004,        // Ogma 4
+            S01N004p,       // Ogma 4 holo
         }
 
         // List of all card rarities

@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 0
   cardRarity: 4
+  altArtIDs: 01000000
   cardNumber: B01-001SR
   charTitle: Savior of His Realm
   charQuote: '''"Lend me your might, Falchion! Grant me the strength to confine Medeus
     to the shadows for all eternity!"'''
   cardIllustrator: Maki Hakoda
   cardSkills:
-  - Hero's Paean [ACT] [TAP 3, Send 1 '"Marth"' card from your hand to the Retreat
+  - Hero's Paean [ACT] [FLIP 3, Send 1 '"Marth"' card from your hand to the Retreat
     Area] Until the end of your opponent's next turn, all allies gain +30 attack.
   - Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit gains
     +20 attack.

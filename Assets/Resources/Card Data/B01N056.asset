@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N056
   m_EditorClassIdentifier: 
-  cardID: 5
+  cardID: 12
   cardRarity: 1
   cardNumber: B01-056HN
   charTitle: Swordswoman Calling Herself Marth
@@ -21,10 +21,10 @@ MonoBehaviour:
   cardSkills:
   - The Name of the Hero-King [SPECIAL] This card's Unit Name is also treated as
     "Marth".
-  - "Parallel Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit\r
-    gains +20 attack."
-  - "'[ATK] Hero Emblem [SUPP] Until the end of this combat, the number of Orbs that\r
-    your <Blue> attacking unit''s attack will destroy becomes 2.'"
+  - Parallel Falchion [ALWAYS] If this unit is attacking a <Dragon> unit, this unit
+    gains +20 attack.
+  - '[ATK] Hero Emblem [SUPP] Until the end of this combat, the number of Orbs that
+    your <Blue> attacking unit''''s attack will destroy becomes 2.'
   skillTypes: 010000000000000000000000000000
   charName: Lucina
   classTitle: Lord
