@@ -34,21 +34,120 @@ namespace Com.SakuraStudios.FECipherCollection
         // List of all valid CardIDs current set up to function in the game.
         public enum CardID
         {
+            M00N001,        // Default Cipher back
             B01N001,        // Marth 5
             B01N001p,       // Marth 5 holo
             B01N002,        // Marth 2 
             B01N003,        // Marth 1
-            B01N003p,       // Marth 1 holo 
+            B01N003s,       // Marth 1 holo 
             B01N004,        // Caeda 4
             B01N004p,       // Caeda 4 holo
             B01N005,        // Caeda 2
             B01N006,        // Caeda 1
+            B01N007,        // Cain 3
+            B01N007s,       // Cain 3 starter
+            B01N008,        // Cain 1
+            B01N009,        // Abel 3
+            B01N009s,       // Abel 3 starter
+            B01N010,        // Able 1
+            B01N011,        // Draug 3
+            B01N012,        // Draug 1
+            B01N013,        // Gordin 3
+            B01N014,        // Gordin 1
+            B01N015,        // Wrys 1
             B01N016,        // Ogma 4
             B01N017,        // Ogma 2
             B01N018,        // Ogma 1
-            B01N056,        // Lucina 1 
+            B01N019,        // Bord 1
+            B01N020,        // Cord 1
+            B01N021,        // Barst 2
+            B01N022,        // Navarre 4
+            B01N022p,       // Navarre 4 plus
+            B01N023,        // Navarre 2
+            B01N024,        // Navarre 1
+            B01N025,        // Lena 3
+            B01N026,        // Lena 1
+            B01N027,        // Julian 2
+            B01N028,        // Merric 4
+            B01N028s,       // Merric 4 starter
+            B01N029,        // Merric 1
+            B01N030,        // Minerva 4
+            B01N030p,       // Minerva 4 plus
+            B01N031,        // Minerva 1
+            B01N032,        // Maria 3
+            B01N033,        // Maria 1
+            B01N034,        // Jeorge 3
+            B01N035,        // Linde 3
+            B01N036,        // Linde 1
+            B01N036s,       // Linde 1 holo
+            B01N037,
+            B01N038,
+            B01N039,
+            B01N040,
+            B01N041,
+            B01N042,
+            B01N043,
+            B01N044,
+            B01N045,
+            B01N046,
+            B01N047,
+            B01N048,
+            B01N049,
+            B01N050,
+            B01N051,
+            B01N052,
+            B01N053,
+            B01N054,
+            B01N055,
+            B01N056,        // Lucina 1
+            B01N057,
+            B01N058,
+            B01N059,
+            B01N060,
+            B01N061,
+            B01N062,
+            B01N063,
+            B01N064,
+            B01N065,
+            B01N066,
+            B01N067,
+            B01N068,
+            B01N069,
+            B01N070,
+            B01N071,
+            B01N072,
+            B01N073,
+            B01N074,
+            B01N075,
+            B01N076,
+            B01N077,
+            B01N078,
+            B01N079,
+            B01N080,
+            B01N081,
+            B01N082,
+            B01N083,
+            B01N084,
+            B01N085,
+            B01N086,
+            B01N087,
+            B01N088,
+            B01N089,
+            B01N090,
+            B01N091,
+            B01N092,
+            B01N093,
+            B01N094,
+            B01N095,
+            B01N096,
+            B01N097,
+            B01N098,
+            B01N099,
+            B01N100,        // Anna 2 
             P01N003,        // Marth 1
             P01N006,        // Jagan 3
+            P01N007,        // Wrys 3
+            P01N008,        // Minerva 1
             P01N012,        // Marth 2
             P01N013,        // Marth 3
             S01N001,        // Marth 4
@@ -56,8 +155,10 @@ namespace Com.SakuraStudios.FECipherCollection
             S01N002,        // Caeda 3
             S01N002p,       // Caeda 3 holo
             S01N003,        // Jagen 3
-            S01N004,        // Ogma 4
-            S01N004p,       // Ogma 4 holo
+            S01N004,        // Ogma 3
+            S01N004p,       // Ogma 3 holo
+            S01N005,        // Navarre 3
+            S01N005p,       // Navarre 3 holo
         }
 
         // List of all card rarities
