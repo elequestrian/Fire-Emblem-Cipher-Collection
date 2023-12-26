@@ -118,53 +118,64 @@ namespace Com.SakuraStudios.FECipherCollection
             B01N061s,       // Frederick 3 holo
             B01N062,        // Virion 3
             B01N063,        // Virion 1
-            B01N064,
-            B01N065,
-            B01N066,
-            B01N067,
-            B01N068,
-            B01N069,
-            B01N070,
-            B01N071,
-            B01N072,
-            B01N073,
-            B01N074,
-            B01N075,
-            B01N076,
-            B01N077,
-            B01N078,
-            B01N079,
-            B01N080,
-            B01N081,
-            B01N082,
-            B01N083,
-            B01N084,
-            B01N085,
-            B01N086,
-            B01N087,
-            B01N088,
-            B01N089,
-            B01N090,
-            B01N091,
-            B01N092,
-            B01N093,
-            B01N094,
-            B01N095,
-            B01N096,
-            B01N097,
-            B01N098,
+            B01N064,        // Sully 3
+            B01N064s,       // Sully 3 holo
+            B01N065,        // Sully 1
+            B01N066,        // Stahl 3
+            B01N066s,       // Stahl 3 holo
+            B01N067,        // Stahl 1
+            B01N068,        // Sumia 3
+            B01N069,        // Sumia 1
+            B01N070,        // Lon'qu 3
+            B01N070p,       // Lon'qu 3 plus
+            B01N070s,       // Lon'qu 3 starter
+            B01N071,        // Lon'qu 1
+            B01N072,        // Maribelle 1
+            B01N073,        // Gaius 3
+            B01N074,        // Gaius 1
+            B01N075,        // Cordelia 3
+            B01N076,        // Cordelia 1
+            B01N077,        // Gregor 2
+            B01N078,        // Nowi 3
+            B01N079,        // Nowi 1
+            B01N080,        // Tharja 4
+            B01N080p,       // Tharja 4 plus
+            B01N081,        // Tharja 2
+            B01N082,        // Tharja 1
+            B01N083,        // Olivia 2
+            B01N084,        // Cherche 3
+            B01N085,        // Cherche 1
+            B01N086,        // Henry 3
+            B01N087,        // Henry 1
+            B01N088,        // MorganM 2
+            B01N089,        // Gerome 4
+            B01N090,        // Gerome 2
+            B01N091,        // Owain 4
+            B01N092,        // Owain 2
+            B01N093,        // Owain 1
+            B01N094,        // Severa 3
+            B01N095,        // Severa 1
+            B01N096,        // Noire 2
+            B01N097,        // Inigo 3
+            B01N097p,       // Inigo 3 plus
+            B01N098,        // Inigo 1
             B01N099,        // Tiki 2
-            B01N100,        // Anna 2 
+            B01N100,        // Anna 3
+            P01N001,        // CorrinM 1
+            P01N002,        // CorrinF 1
             P01N003,        // Marth 1
             P01N004,        // Lucina 1
             P01N005,        // Chrom 3
             P01N006,        // Jagan 3
             P01N007,        // Wrys 3
             P01N008,        // Minerva 1
+            P01N009,        // Cordelia 1
+            P01N010,        // Tharja 1
             P01N011,        // Tiki 2
             P01N012,        // Marth 2
             P01N013,        // Marth 3
             P01N014,        // Lucina 2
+            P01N015,        // RobinM 2
             S01N001,        // Marth 4
             S01N001p,       // Marth 4 holo
             S01N002,        // Caeda 3
@@ -176,7 +187,11 @@ namespace Com.SakuraStudios.FECipherCollection
             S01N005p,       // Navarre 3 holo
             S02N001,        // Chrom 4
             S02N001p,       // Chrom 4 plus
-            S02N002,
+            S02N002,        // Kellam 1
+            S02N003,        // Vaike 1
+            S02N004,        // Miriel 1
+            S02N004p,       // Miriel 1 holo
+            S02N005,        // Ricken 1
         }
 
         // List of all card rarities
