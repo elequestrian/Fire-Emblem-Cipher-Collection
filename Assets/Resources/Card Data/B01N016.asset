@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N016
   m_EditorClassIdentifier: 
-  cardID: 9
+  cardID: 21
   cardRarity: 4
+  altArtIDs: 
   cardNumber: B01-016SR
   charTitle: Talysian Wargod
   charQuote: '''"You saved me, Princess. I don''t just owe you my life... I owe you

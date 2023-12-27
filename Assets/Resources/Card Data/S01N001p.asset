@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: S01N001p
   m_EditorClassIdentifier: 
-  cardID: 18
+  cardID: 143
   cardRarity: 11
-  altArtIDs: 11000000
+  altArtIDs: 8e000000
   cardNumber: S01-001ST+
   charTitle: Star and Savior
   charQuote: '''"I will crush Dolhr. I swear it on this emblem of fire!"'''

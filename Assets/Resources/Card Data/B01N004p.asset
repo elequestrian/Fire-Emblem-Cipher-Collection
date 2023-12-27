@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N004p
   m_EditorClassIdentifier: 
-  cardID: 6
+  cardID: 7
   cardRarity: 5
-  altArtIDs: 05000000
+  altArtIDs: 06000000
   cardNumber: B01-004SR+
   charTitle: Love-Extolling Wings
   charQuote: '''"Tell me: do you believe in love? Do you have someone special out

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N006
   m_EditorClassIdentifier: 
-  cardID: 8
+  cardID: 9
   cardRarity: 1
+  altArtIDs: 
   cardNumber: B01-006HN
   charTitle: Talys's Heart
   charQuote: '''"Marth, come quickly!"'''

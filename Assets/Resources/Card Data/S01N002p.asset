@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: S01N002p
   m_EditorClassIdentifier: 
-  cardID: 20
+  cardID: 145
   cardRarity: 11
-  altArtIDs: 13000000
+  altArtIDs: 90000000
   cardNumber: S01-002ST+
   charTitle: Battlefield-Soaring Princess
   charQuote: '''"I wish nothing more than to put an end to this dreadful war, and

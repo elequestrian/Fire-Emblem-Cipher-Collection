@@ -28,21 +28,24 @@ namespace Com.SakuraStudios.FECipherCollection
             foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
             {
                 CipherCardData cardData = LoadCardData(cardID);
-                
-                Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
-                
-                //is this necessary?
-                cardDataList.Add(cardData);
 
-                //Divide up the cards into categories
-                if (cardData.cardRarity == CipherData.CardRarity.N || cardData.cardRarity == CipherData.CardRarity.HN 
-                    || cardData.cardRarity == CipherData.CardRarity.PR || cardData.cardRarity == CipherData.CardRarity.ST)
+                if (cardData != null)
                 {
-                    lowerTierCards.Add(cardID);
+                    Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
+
+                    //this is a list of actual cards that exist
+                    cardDataList.Add(cardData);
+
+                    //Divide up the cards into categories
+                    if (cardData.cardRarity == CipherData.CardRarity.N || cardData.cardRarity == CipherData.CardRarity.HN
+                        || cardData.cardRarity == CipherData.CardRarity.PR || cardData.cardRarity == CipherData.CardRarity.ST)
+                    {
+                        lowerTierCards.Add(cardID);
+                    }
+                    // cardRarity = R, Rp, SR, SRp, pX, HR, PRp, STp
+                    else
+                        upperTierCards.Add(cardID);
                 }
-                // cardRarity = R, Rp, SR, SRp, pX, HR, PRp, STp
-                else
-                    upperTierCards.Add(cardID);
             }
 
             

@@ -61,7 +61,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
             // Set up the alt art button.
             altArtButton.onClick.RemoveAllListeners();
-            if (card.GetCardData.altArtIDs == null)
+            if (card.GetCardData.altArtIDs.Length == 0)
             { 
                 altArtButton.interactable = false;
             }

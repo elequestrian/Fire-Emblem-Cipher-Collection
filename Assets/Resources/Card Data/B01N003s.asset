@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N003p
+  m_Name: B01N003s
   m_EditorClassIdentifier: 
-  cardID: 4
+  cardID: 5
   cardRarity: 11
-  altArtIDs: 03000000
+  altArtIDs: 04000000
   cardNumber: B01-003ST+
   charTitle: Altean Prince
   charQuote: '''"I know what I must do, now that Medeus has revived and restored

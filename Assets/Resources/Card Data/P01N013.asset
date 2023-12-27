@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: P01N013
   m_EditorClassIdentifier: 
-  cardID: 16
+  cardID: 139
   cardRarity: 9
+  altArtIDs: 
   cardNumber: P01-013PR
   charTitle: Prince in Hiding
   charQuote: '''"Steady, Caeda. You did well to come find us. Altea''s bravest knights

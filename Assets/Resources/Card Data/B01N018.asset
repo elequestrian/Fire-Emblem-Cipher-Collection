@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N018
   m_EditorClassIdentifier: 
-  cardID: 11
+  cardID: 23
   cardRarity: 1
+  altArtIDs: 
   cardNumber: B01-018HN
   charTitle: Loyal Blade
   charQuote: '''"The king has bid me and my men join your army."'''

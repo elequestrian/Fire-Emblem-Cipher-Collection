@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
   m_Name: B01N001
   m_EditorClassIdentifier: 
-  cardID: 0
+  cardID: 1
   cardRarity: 4
-  altArtIDs: 01000000
+  altArtIDs: 02000000
   cardNumber: B01-001SR
   charTitle: Savior of His Realm
   charQuote: '''"Lend me your might, Falchion! Grant me the strength to confine Medeus
