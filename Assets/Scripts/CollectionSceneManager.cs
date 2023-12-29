@@ -38,8 +38,8 @@ namespace Com.SakuraStudios.FECipherCollection
                 
                 if (cardData != null)
                 {
-                    //check that this ID either doesn't have an alt art or the alt art is not already present in the list.
-                    if (cardData.altArtIDs.Length == 0 || (cardData.altArtIDs.Length > 0 && !displayCardIDs.Contains(cardData.altArtIDs[0])))
+                    //check that this ID doesn't have an alt art or that the alt art is not already present in the list.
+                    if (cardData.altArtIDs.Length == 0|| (cardData.altArtIDs.Length > 0 && !displayCardIDs.Contains(cardData.altArtIDs[0])))
                     {
                         displayCardIDs.Add(cardID);
                     }

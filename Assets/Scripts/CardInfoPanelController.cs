@@ -52,9 +52,13 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             //Set the large display card up the same as a clicked card.
             displayCard.SetUp(card.CardID);
-            
+
             // Format the card's information and store it to be displayed.
-            displayText.text = TranslateCard(card);
+            if (card.GetCardData.cardRarity != CipherData.CardRarity.M)
+                displayText.text = TranslateCard(card);
+            else
+                displayText.text = "";
+            
 
             // Set the scroll bar to the top of the card's information.
             cardTextScrollbar.value = 1f;

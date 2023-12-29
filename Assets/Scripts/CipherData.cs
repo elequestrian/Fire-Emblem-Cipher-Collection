@@ -208,7 +208,8 @@ namespace Com.SakuraStudios.FECipherCollection
             PR,     //Promo
             PRp,    //Promo Holo
             ST,     //Starter
-            STp     //Starter Holo
+            STp,    //Starter Holo
+            M       //Marker    
         }
     }
 }

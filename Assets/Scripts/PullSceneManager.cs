@@ -37,14 +37,30 @@ namespace Com.SakuraStudios.FECipherCollection
                     cardDataList.Add(cardData);
 
                     //Divide up the cards into categories
-                    if (cardData.cardRarity == CipherData.CardRarity.N || cardData.cardRarity == CipherData.CardRarity.HN
-                        || cardData.cardRarity == CipherData.CardRarity.PR || cardData.cardRarity == CipherData.CardRarity.ST)
+                    
+                    switch (cardData.cardRarity)
                     {
-                        lowerTierCards.Add(cardID);
-                    }
-                    // cardRarity = R, Rp, SR, SRp, pX, HR, PRp, STp
-                    else
-                        upperTierCards.Add(cardID);
+                        case CipherData.CardRarity.N:
+                        case CipherData.CardRarity.HN:
+                        case CipherData.CardRarity.PR:
+                        case CipherData.CardRarity.ST:
+                            lowerTierCards.Add(cardID);
+                            break;
+
+                        case CipherData.CardRarity.R:
+                        case CipherData.CardRarity.Rp:
+                        case CipherData.CardRarity.SR:
+                        case CipherData.CardRarity.SRp:
+                        case CipherData.CardRarity.pX:
+                        case CipherData.CardRarity.HR:
+                        case CipherData.CardRarity.PRp:
+                        case CipherData.CardRarity.STp:
+                            upperTierCards.Add(cardID);
+                            break;
+
+                        default: // else cardRarity = M and we shouldn't include in the pack pulls    
+                            break;
+                    }              
                 }
             }
 
