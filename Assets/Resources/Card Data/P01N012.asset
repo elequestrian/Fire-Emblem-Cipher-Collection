@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: P01-012PR
   charTitle: Prince of a Fallen Land
-  charQuote: '''"With gallant hearts, one and all, bring vict''ry forth!"'''
+  charQuote: '"With gallant hearts, one and all, bring vict''ry forth!"'
   cardIllustrator: 
   cardSkills:
   - "Hero\u2019s Disposition [ALWAYS] If you have 2 or more other <Red> allies, this

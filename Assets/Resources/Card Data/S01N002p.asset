@@ -17,8 +17,7 @@ MonoBehaviour:
   altArtIDs: 90000000
   cardNumber: S01-002ST+
   charTitle: Battlefield-Soaring Princess
-  charQuote: '''"I wish nothing more than to put an end to this dreadful war, and
-    swiftly."'''
+  charQuote: '"I wish nothing more than to put an end to this dreadful war, and swiftly."'
   cardIllustrator: Doji Shiki
   cardSkills:
   - Wyvern Whip [TRIGGER] Each time an ally with a Deployment Cost of 2 or lower

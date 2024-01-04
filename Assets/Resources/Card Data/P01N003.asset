@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: P01-003PR
   charTitle: Altean Prince
-  charQuote: '''"I will not stop, not until I''ve restored peace and liberty to Altea!"'''
+  charQuote: '"I will not stop, not until I''ve restored peace and liberty to Altea!"'
   cardIllustrator: Daisuke Izuka
   cardSkills:
   - Young Hero [ACT] [TAP, Tap 1 other ally] Choose 1 enemy, and move them. This

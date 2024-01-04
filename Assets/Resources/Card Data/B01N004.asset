@@ -17,8 +17,7 @@ MonoBehaviour:
   altArtIDs: 07000000
   cardNumber: B01-004SR
   charTitle: Love-Extolling Wings
-  charQuote: '''"Tell me: do you believe in love? Do you have someone special out
-    there?"'''
+  charQuote: '"Tell me: do you believe in love? Do you have someone special out there?"'
   cardIllustrator: Mayo
   cardSkills:
   - 'Persuasion [TRIGGER] [FLIP 1] When this unit''s attack destroys an enemy, you

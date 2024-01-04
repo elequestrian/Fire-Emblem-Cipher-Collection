@@ -289,8 +289,8 @@ namespace Com.SakuraStudios.FECipherCollection
             }
             */
 
-            // Finish off by adding the character quote and illustrator
-            cardInfo.AppendLine("\n").Append(card.CharQuote);
+            // Finish off by adding the character quote and illustrator in italics
+            cardInfo.AppendLine("\n").Append("<i>" + card.CharQuote);
             cardInfo.AppendLine().Append("Illust. " + card.CardIllustrator);
 
             return cardInfo.ToString();

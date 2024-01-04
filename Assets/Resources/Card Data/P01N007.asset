@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: P01N007
+  m_EditorClassIdentifier: 
+  cardID: 133
+  cardRarity: 8
+  altArtIDs: 
+  cardNumber: P01-007PR
+  charTitle: Healing Hero
+  charQuote: '"I am Wrys, a humble hero. I have no time to spare on healing my enemies
+    - only on burying them."'
+  cardIllustrator: Shishizaru
+  cardSkills:
+  - 'Vulnerary [TRIGGER] [TAP, Destroy this unit] When another ally is being attacked,
+    you may pay the cost and if you do: Until the end of this combat, that defending
+    unit gains +20 attack.'
+  skillTypes: 000000000000000000000000000000
+  charName: Wrys
+  classTitle: Hero
+  deploymentCost: 3
+  canPromote: 1
+  promotionCost: 2
+  cardColor: 0100000000000000
+  charGender: 0100
+  charWeaponType: 00000100000000000000
+  unitTypes: 000000000000
+  baseAttack: 60
+  baseSupport: 10
+  baseRange: 010000

@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: B01-017N
   charTitle: Capable Gladiator
-  charQuote: '''"Swinging your sword without purpose... You''re worse than an animal."'''
+  charQuote: '"Swinging your sword without purpose... You''re worse than an animal."'
   cardIllustrator: nNekoR
   cardSkills:
   - Fateful Opponent [ALWAYS] If this unit's support is not named "Caeda" or "Navarre",

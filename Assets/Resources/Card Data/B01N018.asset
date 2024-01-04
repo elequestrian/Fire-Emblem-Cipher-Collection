@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: B01-018HN
   charTitle: Loyal Blade
-  charQuote: '''"The king has bid me and my men join your army."'''
+  charQuote: '"The king has bid me and my men join your army."'
   cardIllustrator: Meisai
   cardSkills:
   - Mercenary Captain [ALWAYS] During your turn, if you have 2 or more other allies

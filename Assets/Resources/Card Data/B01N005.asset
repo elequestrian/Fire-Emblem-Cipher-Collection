@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: B01-005N
   charTitle: Soul-Soothing Wings
-  charQuote: '''"Leave this rabble. Lend your sword to our cause."'''
+  charQuote: '"Leave this rabble. Lend your sword to our cause."'
   cardIllustrator: Mayo
   cardSkills:
   - Wing Spear [ALWAYS] If this unit is attacking a <Beast> or <Armored> unit, this

@@ -17,8 +17,8 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: P01-013PR
   charTitle: Prince in Hiding
-  charQuote: '''"Steady, Caeda. You did well to come find us. Altea''s bravest knights
-    aren''t about to hand Talys to that flock of seafowl."'''
+  charQuote: '"Steady, Caeda. You did well to come find us. Altea''s bravest knights
+    aren''t about to hand Talys to that flock of seafowl."'
   cardIllustrator: Sachiko Wada
   cardSkills:
   - Heroic Prince [ACT] [ FLIP 2] Choose 1 enemy, and move them.

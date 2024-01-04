@@ -17,8 +17,8 @@ MonoBehaviour:
   altArtIDs: 05000000
   cardNumber: B01-003HN
   charTitle: Altean Prince
-  charQuote: '''"I know what I must do, now that Medeus has revived and restored
-    Dolhr to its former might."'''
+  charQuote: '"I know what I must do, now that Medeus has revived and restored Dolhr
+    to its former might."'
   cardIllustrator: Yusuke Kozaki
   cardSkills:
   - Young Hero [ACT] [TAP, Tap 1 other ally] Choose 1 enemy, and move them. This

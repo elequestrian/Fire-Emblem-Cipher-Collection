@@ -17,8 +17,8 @@ MonoBehaviour:
   altArtIDs: 
   cardNumber: B01-016SR
   charTitle: Talysian Wargod
-  charQuote: '''"You saved me, Princess. I don''t just owe you my life... I owe you
-    something much more precious."'''
+  charQuote: '"You saved me, Princess. I don''t just owe you my life... I owe you
+    something much more precious."'
   cardIllustrator: Hiroaki
   cardSkills:
   - Battlefield Breath [ACT] [Tap 1 other ally] Until the end of the turn, this unit

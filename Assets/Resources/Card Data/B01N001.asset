@@ -17,8 +17,8 @@ MonoBehaviour:
   altArtIDs: 02000000
   cardNumber: B01-001SR
   charTitle: Savior of His Realm
-  charQuote: '''"Lend me your might, Falchion! Grant me the strength to confine Medeus
-    to the shadows for all eternity!"'''
+  charQuote: '"Lend me your might, Falchion! Grant me the strength to confine Medeus
+    to the shadows for all eternity!"'
   cardIllustrator: Maki Hakoda
   cardSkills:
   - Hero's Paean [ACT] [FLIP 3, Send 1 '"Marth"' card from your hand to the Retreat

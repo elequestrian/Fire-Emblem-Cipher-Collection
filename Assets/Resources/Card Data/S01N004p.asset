@@ -17,7 +17,7 @@ MonoBehaviour:
   altArtIDs: 93000000
   cardNumber: S01-004ST+
   charTitle: Wielder of a Heavy Blade
-  charQuote: '''"I figured we''d have to settle the score sooner or later..."'''
+  charQuote: '"I figured we''d have to settle the score sooner or later..."'
   cardIllustrator: Akira Fujikawa
   cardSkills:
   - Captain of the Royal Talysian Army [TRIGGER] Each time an ally with a Deployment
