@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N032
+  m_EditorClassIdentifier: 
+  cardID: 40
+  cardRarity: 1
+  altArtIDs: 
+  cardNumber: B01-032HN
+  charTitle: Innocent Bishop
+  charQuote: "\"How can I ever help you if you don\u2019t give me a chance to be
+    strong? I\u2019m staying here and fighting! No protesting!\""
+  cardIllustrator: Shigetaka Kimura
+  cardSkills:
+  - Fortify [ACT] [TAP, FLIP 3] Choose up to 2 non-"Maria" cards with different Unit
+    Names from each other from your Retreat Area, and add them to your hand.
+  skillTypes: 000000000000000000000000000000
+  charName: Maria
+  classTitle: Bishop
+  deploymentCost: 3
+  canPromote: 1
+  promotionCost: 2
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000000010000000000
+  unitTypes: 000000000000
+  baseAttack: 50
+  baseSupport: 20
+  baseRange: 010100

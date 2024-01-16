@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N030p
+  m_EditorClassIdentifier: 
+  cardID: 38
+  cardRarity: 3
+  altArtIDs: 25000000
+  cardNumber: B01-030R+
+  charTitle: The Princess
+  charQuote: '"I love my brother enough to spare him death on some stranger''s sword,
+    you see? Let him be punished by my hands."'
+  cardIllustrator: Mari Shimazaki
+  cardSkills:
+  - Wyvern Whip [ALWAYS] This unit gains +10 attack per other <Flier> ally.
+  - "Iote\u2019s Shield [ALWAYS] All enemies lose the \"Anti-Fliers\" skill and cannot
+    gain a new instance of it. ([ALWAYS] skills are in effect as long as this card
+    is on the Battlefield as a unit.)"
+  skillTypes: 000000000000000000000000000000
+  charName: Minerva
+  classTitle: Dracoknight
+  deploymentCost: 4
+  canPromote: 1
+  promotionCost: 3
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000100000000000000
+  unitTypes: 000100010000
+  baseAttack: 50
+  baseSupport: 30
+  baseRange: 010000

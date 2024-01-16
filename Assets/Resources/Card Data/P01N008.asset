@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: P01N008
+  m_EditorClassIdentifier: 
+  cardID: 134
+  cardRarity: 8
+  altArtIDs: 
+  cardNumber: P01-008PR
+  charTitle: True Leader
+  charQuote: '"I suppose you''re right. There''s nothing wrong with partaking in
+    such frivolity... Every once in a while, at least."'
+  cardIllustrator: Mayo
+  cardSkills:
+  - Winds of Macedon [ALWAYS] If you have 2 or more other <Flier> allies, this unit
+    gains +10 attack.
+  - '[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You
+    may move that ally.'
+  skillTypes: 010000000000000000000000000000
+  charName: Minerva
+  classTitle: Pegasus Knight
+  deploymentCost: 1
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00010000000000000000
+  unitTypes: 000101000000
+  baseAttack: 30
+  baseSupport: 30
+  baseRange: 010000

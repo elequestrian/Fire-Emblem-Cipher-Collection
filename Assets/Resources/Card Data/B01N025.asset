@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N025
+  m_EditorClassIdentifier: 
+  cardID: 31
+  cardRarity: 1
+  altArtIDs: 
+  cardNumber: B01-025HN
+  charTitle: Angel of Love
+  charQuote: '"If you''re going to fight, then at least fight for something you believe
+    in."'
+  cardIllustrator: Fumi
+  cardSkills:
+  - 'Saintly Blessing [TRIGGER] [Once Per Turn] [FLIP 1] When an ally with a Deployment
+    Cost of 2 or lower is deployed, you may pay the cost and if you do: Choose 1
+    non-"Lena" card with a Deployment Cost of 1 from your Retreat Area, and add it
+    to your hand.'
+  skillTypes: 000000000000000000000000000000
+  charName: Lena
+  classTitle: Bishop
+  deploymentCost: 3
+  canPromote: 1
+  promotionCost: 2
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000000010000000000
+  unitTypes: 000000000000
+  baseAttack: 50
+  baseSupport: 20
+  baseRange: 010100
