@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N039
+  m_EditorClassIdentifier: 
+  cardID: 49
+  cardRarity: 0
+  altArtIDs: 
+  cardNumber: B01-039N
+  charTitle: Elder Pegasus-Riding Knight
+  charQuote: "\u201CNevermind our homeland, our loyalty first is to Minerva.\u201D"
+  cardIllustrator: Mayo
+  cardSkills:
+  - The Three Pegasus Sisters [ACT] [TAP, FLIP 2] Choose 1 "Catria" or "Est" with
+    a Deployment Cost of 2 or less in your Deck, and deploy her. Afterwards, shuffle
+    your Deck.
+  - '[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You
+    may move that ally.'
+  skillTypes: 010000000000000000000000000000
+  charName: Palla
+  classTitle: Pegasus Knight
+  deploymentCost: 1
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00010000000000000000
+  unitTypes: 000101000000
+  baseAttack: 30
+  baseSupport: 30
+  baseRange: 010000

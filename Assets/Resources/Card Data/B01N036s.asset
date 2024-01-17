@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N036s
+  m_EditorClassIdentifier: 
+  cardID: 45
+  cardRarity: 11
+  altArtIDs: 2c000000
+  cardNumber: B01-036ST+
+  charTitle: Miloah's Child
+  charQuote: '"I want to destroy Gharnef and avenge my father myself!"'
+  cardIllustrator: Tetsu Kurosawa
+  cardSkills:
+  - Thunder [ACT] [Once Per Turn] [FLIP 1] Until the end of the turn, this unit gains
+    +10 attack.
+  - '[ATK] Magic Emblem [SUPP] Draw 1 card. Choose 1 card from your hand, and send
+    it to the Retreat Area.'
+  skillTypes: 010000000000000000000000000000
+  charName: Linde
+  classTitle: Mage
+  deploymentCost: 1
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000000010000000000
+  unitTypes: 000000000000
+  baseAttack: 30
+  baseSupport: 20
+  baseRange: 010100

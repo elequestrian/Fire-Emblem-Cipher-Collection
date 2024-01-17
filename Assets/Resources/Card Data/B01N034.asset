@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N034
+  m_EditorClassIdentifier: 
+  cardID: 42
+  cardRarity: 1
+  altArtIDs: 
+  cardNumber: B01-034HN
+  charTitle: Perfect Shot
+  charQuote: "\"Let me fight with you to save my land, and I will use this silver
+    bow to show you marksmanship unlike any you\u2019ve ever seen.\""
+  cardIllustrator: Misei Ito
+  cardSkills:
+  - Peerless Archer [ACT] [Tap 1 ally with a Deployment Cost of 2 or less] Until
+    end of the turn, this unit's attacks cannot be evaded by <Flier> enemies.
+  - Anti-Fliers [ALWAYS] If this unit is attacking a <Flier> unit, this unit gains
+    +30 attack.
+  skillTypes: 000000000000000000000000000000
+  charName: Jeorge
+  classTitle: Sniper
+  deploymentCost: 3
+  canPromote: 1
+  promotionCost: 2
+  cardColor: 0100000000000000
+  charGender: 0100
+  charWeaponType: 00000001000000000000
+  unitTypes: 000000000000
+  baseAttack: 50
+  baseSupport: 20
+  baseRange: 000100

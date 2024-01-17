@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N038p
+  m_EditorClassIdentifier: 
+  cardID: 48
+  cardRarity: 3
+  altArtIDs: 2f000000
+  cardNumber: B01-038R+
+  charTitle: Eldest Pegasus Sister
+  charQuote: '"With me, Sisters! Triangle Attack!!!"'
+  cardIllustrator: HACCAN
+  cardSkills:
+  - '[Formation Skill] Triangle Attack [TRIGGER] [Tap allied "Catria" and "Est"]
+    When this unit attacks, you may pay the cost and if you do: Until the end of
+    this combat, this unit gains +50 attack and her attacks cannot be evaded.'
+  - Bonds of the Three Sisters [ALWAYS] If this unit is being supported by "Catria"
+    or "Est", this unit gains +10 attack.
+  skillTypes: 000001000000000000000000000000
+  charName: Palla
+  classTitle: Falcon Knight
+  deploymentCost: 3
+  canPromote: 1
+  promotionCost: 2
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00010000000000000000
+  unitTypes: 000101000000
+  baseAttack: 50
+  baseSupport: 30
+  baseRange: 010000
