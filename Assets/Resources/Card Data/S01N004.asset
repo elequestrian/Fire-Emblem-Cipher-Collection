@@ -23,8 +23,8 @@ MonoBehaviour:
   - Captain of the Royal Talysian Army [TRIGGER] Each time an ally with a Deployment
     Cost of 2 or lower is deployed, until the end of the turn, this unit and that
     ally gain +10 attack.
-  - Levin Sword [ACT] [ FLIP 1] Until the end of the turn, this unit loses -10 attack,
-    and acquires <Tome> affinity and range 1-2.
+  - Levin Sword [ACT] [ FLIP 1] Until the end of the turn, this unit loses -10 attack
+    but acquires <Tome> weapon and range 1-2.
   skillTypes: 000000000000000000000000000000
   charName: Ogma
   classTitle: Hero

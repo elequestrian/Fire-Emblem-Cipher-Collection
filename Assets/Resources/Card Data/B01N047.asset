@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N047
+  m_EditorClassIdentifier: 
+  cardID: 59
+  cardRarity: 0
+  altArtIDs: 
+  cardNumber: B01-047N
+  charTitle: Dragon Scion
+  charQuote: '"Am I not allowed to call you Mar-Mar?"'
+  cardIllustrator: Fuzichoco
+  cardSkills:
+  - Longevous Dragon Tribe [ALWAYS] If you have 4 or more Bond cards, this card gains
+    +30 attack
+  - '[ATK] Dragonkin Emblem [SUPP] If your attacking unit is <Red>, choose 1 card
+    in your hand. You may place that card in the Bond Area.'
+  skillTypes: 010000000000000000000000000000
+  charName: Tiki
+  classTitle: Manakete
+  deploymentCost: 1
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000000000000010000
+  unitTypes: 000000010000
+  baseAttack: 30
+  baseSupport: 20
+  baseRange: 010000

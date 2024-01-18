@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N038
+  m_Name: B01N040p
   m_EditorClassIdentifier: 
-  cardID: 47
-  cardRarity: 2
-  altArtIDs: 30000000
-  cardNumber: B01-038R
-  charTitle: Eldest Pegasus Sister
-  charQuote: '"With me, Sisters! Triangle Attack!!!"'
+  cardID: 51
+  cardRarity: 3
+  altArtIDs: 32000000
+  cardNumber: B01-040R+
+  charTitle: Middle Pegasus Sister
+  charQuote: '"We have you now! Triangle Attack!!!"'
   cardIllustrator: HACCAN
   cardSkills:
-  - '[Formation Skill] Triangle Attack [TRIGGER] [Tap allied "Catria" and "Est"]
-    When this unit attacks, you may pay the cost, and if you do: Until the end of
-    this combat, this unit gains +50 attack, and her attacks cannot be evaded.'
-  - Bonds of the Three Sisters [ALWAYS] If this unit is being supported by "Catria"
+  - '[Formation Skill] Triangle Attack [TRIGGER] [Tap allied "Palla" and "Est"] When
+    this unit attacks, you may pay the cost, and if you do: Until the end of this
+    combat, this unit gains +50 attack, and her attacks cannot be evaded.'
+  - Bonds of the Three Sisters [ALWAYS] If this unit is being supported by "Palla"
     or "Est", this unit gains +10 attack.
   skillTypes: 000001000000000000000000000000
-  charName: Palla
+  charName: Catria
   classTitle: Falcon Knight
   deploymentCost: 3
   canPromote: 1

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N045
+  m_EditorClassIdentifier: 
+  cardID: 57
+  cardRarity: 1
+  altArtIDs: 
+  cardNumber: B01-045HN
+  charTitle: Shape-Shifter
+  charQuote: '"Me and my folk have the power to transform into other people. But
+    I''m not about to waste my considerable talents on those evil coots!"'
+  cardIllustrator: MOMORI
+  cardSkills:
+  - Imitate [ACT] [FLIP 2] Choose 1 other ally. Until the end of the turn, this unit
+    becomes a copy of that ally in all but Unit Name and Attack Power.
+  skillTypes: 000000000000000000000000000000
+  charName: Xane
+  classTitle: Freelancer
+  deploymentCost: 3
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0100
+  charWeaponType: 01000000000000000000
+  unitTypes: 000000000000
+  baseAttack: 30
+  baseSupport: 10
+  baseRange: 010000

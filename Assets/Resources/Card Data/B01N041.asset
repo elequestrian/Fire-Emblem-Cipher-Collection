@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N039
+  m_Name: B01N041
   m_EditorClassIdentifier: 
-  cardID: 49
+  cardID: 52
   cardRarity: 0
   altArtIDs: 
-  cardNumber: B01-039N
-  charTitle: Elder Pegasus-Riding Knight
-  charQuote: "\u201CNevermind our homeland, our loyalty first is to Minerva.\u201D"
+  cardNumber: B01-041N
+  charTitle: Pegasus-Riding Knight
+  charQuote: '"We are with you!"'
   cardIllustrator: Mayo
   cardSkills:
-  - The Three Pegasus Sisters [ACT] [TAP, FLIP 2] Choose 1 "Catria" or "Est" with
+  - The Three Pegasus Sisters [ACT] [TAP, FLIP 2] Choose 1 "Palla" or "Est" with
     a Deployment Cost of 2 or less in your Deck, and deploy them. Afterwards, shuffle
     your Deck.
   - '[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You
     may move that ally.'
   skillTypes: 010000000000000000000000000000
-  charName: Palla
+  charName: Catria
   classTitle: Pegasus Knight
   deploymentCost: 1
   canPromote: 0

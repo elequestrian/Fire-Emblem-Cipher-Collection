@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
+  m_Name: B01N046
+  m_EditorClassIdentifier: 
+  cardID: 58
+  cardRarity: 4
+  altArtIDs: 
+  cardNumber: B01-046SR
+  charTitle: Manakete Princess
+  charQuote: '"I feel as though I just woke from an awful nightmare..."'
+  cardIllustrator: Fuzichoco
+  cardSkills:
+  - The Dragon Scion's Smile [ALWAYS] During your turn, if this unit's support is
+    successful, you may place that Support card in your Bond Area instead of your
+    Retreat Area.
+  - Longevous Dragon Tribe [ALWAYS] If you have 8 or more Bond cards, this card gains
+    +30 attack
+  - Divine Dragonstone [ALWAYS] If this unit is attacking a <Dragon> unit, this unit
+    gains +20 attack.
+  skillTypes: 000000000000000000000000000000
+  charName: Tiki
+  classTitle: Manakete
+  deploymentCost: 5
+  canPromote: 0
+  promotionCost: 0
+  cardColor: 0100000000000000
+  charGender: 0001
+  charWeaponType: 00000000000000010000
+  unitTypes: 000000010000
+  baseAttack: 60
+  baseSupport: 20
+  baseRange: 010000

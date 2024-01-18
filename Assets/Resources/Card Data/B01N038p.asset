@@ -21,8 +21,8 @@ MonoBehaviour:
   cardIllustrator: HACCAN
   cardSkills:
   - '[Formation Skill] Triangle Attack [TRIGGER] [Tap allied "Catria" and "Est"]
-    When this unit attacks, you may pay the cost and if you do: Until the end of
-    this combat, this unit gains +50 attack and her attacks cannot be evaded.'
+    When this unit attacks, you may pay the cost, and if you do: Until the end of
+    this combat, this unit gains +50 attack, and her attacks cannot be evaded.'
   - Bonds of the Three Sisters [ALWAYS] If this unit is being supported by "Catria"
     or "Est", this unit gains +10 attack.
   skillTypes: 000001000000000000000000000000
