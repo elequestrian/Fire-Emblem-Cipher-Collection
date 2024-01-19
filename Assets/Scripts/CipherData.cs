@@ -192,6 +192,8 @@ namespace Com.SakuraStudios.FECipherCollection
             S02N004,        // Miriel 1
             S02N004p,       // Miriel 1 holo
             S02N005,        // Ricken 1
+            M01N001,        // Red Marker card
+            M01N002,        // Blue Marker card
         }
 
         // List of all card rarities

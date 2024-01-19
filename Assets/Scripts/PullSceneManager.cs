@@ -151,6 +151,36 @@ namespace Com.SakuraStudios.FECipherCollection
             }
         }
 
+        /*
+        private List<CipherData.CardID> CreateSeries1Box()
+        {
+            // Create a list of all Series 1 cards
+            List<CipherCardData> allSeries1Cards = new List<CipherCardData>();
+            foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
+            {
+                CipherCardData cardData = LoadCardData(cardID);
+
+                if (cardData != null && cardData.cardNumber.StartsWith("B01"))
+                {
+                    allSeries1Cards.Add(cardData);             
+                }
+            }
+
+            //Create a list of Series 1 cards in each rarity category
+            List<CipherCardData> Series1NCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.N);
+            List<CipherCardData> Series1HNCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.HN);
+            List<CipherCardData> Series1RCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.R);
+            List<CipherCardData> Series1SRCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.SR);
+            List<CipherCardData> Series1PlusCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.Rp || card.cardRarity == CipherData.CardRarity.SRp);
+
+            //TODO Remove
+            //return CipherData.CardID.GetValues(typeof(CipherData.CardID));
+
+            //start to fill up individual "packs" and put them into a "box"
+        }
+        */
+
+        //private List<CipherCardData> CreateCardDataList(List<CipherData.CardID>)
 
         private CipherCardData LoadCardData(CipherData.CardID cardID)
         {
