@@ -173,6 +173,25 @@ namespace Com.SakuraStudios.FECipherCollection
             List<CipherCardData> Series1SRCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.SR);
             List<CipherCardData> Series1PlusCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.Rp || card.cardRarity == CipherData.CardRarity.SRp);
 
+            //Create a list (box) of 16 queues (packs)
+            List<Queue<CipherCardData>> cipherPackBox = new List<Queue<CipherCardData>>(16);
+            for (int i = 0; i < 16; i++)
+            {
+                Queue<CipherCardData> cipherCardPack = new Queue<CipherCardData>(10);
+                cipherPackBox.Add(cipherCardPack);
+            }
+
+            //Create a duplicate of the N card list to use as a tracker/checklist
+            List<CipherCardData> NCardTracker = Series1NCards.ToList();
+
+            //calculate the number of cards to add to each pack from the tracker
+            //also calculate the remainder of any cards left over.  Then iterate through that 1 per pack as needed. (should be 0 for series 1, but don't assume.
+
+            foreach (Queue<CipherCardData> pack in cipherPackBox)
+            {
+
+            }
+
             //TODO Remove
             //return CipherData.CardID.GetValues(typeof(CipherData.CardID));
 
