@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -184,21 +185,63 @@ namespace Com.SakuraStudios.FECipherCollection
             //Create a duplicate of the N card list to use as a tracker/checklist
             List<CipherCardData> NCardTracker = Series1NCards.ToList();
 
-            //calculate the number of cards to add to each pack from the tracker
-            //also calculate the remainder of any cards left over.  Then iterate through that 1 per pack as needed. (should be 0 for series 1, but don't assume.
+            //calculate the number of cards to add to each pack from the tracker; also calculate the remainder of any cards left over.
+            int NCardsRemainder;
+            int NCardsPerPack = Math.DivRem(NCardTracker.Count, 16, out NCardsRemainder);
 
+            Debug.Log("Number of N cards: " + NCardTracker.Count + "; NCardsPerPack value: " + NCardsPerPack + "; NCardsRemainder: " + NCardsRemainder);
+            Debug.Log("List of N Cards: ");
+            foreach (CipherCardData card in NCardTracker)
+            {
+                Debug.Log(card.cardID.ToString());
+            }
+
+            CipherCardData randomCard;
+
+            //fill each pack with the correct number of N cards
             foreach (Queue<CipherCardData> pack in cipherPackBox)
             {
+                //fill with a certain number of tracked cards
+                for (int i = 0; i < NCardsPerPack; i++)
+                {
+                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count - 1)];
+                    pack.Enqueue(randomCard);
+                    NCardTracker.Remove(randomCard);
+                }
+
+                //Add 1 extra tracked card if needed.
+                if (NCardsRemainder > 0)
+                {
+                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count - 1)];
+                    pack.Enqueue(randomCard);
+                    NCardTracker.Remove(randomCard);
+                    NCardsRemainder--;
+                }
+
+                /* hold till the above is tested.
+                //Fill the rest of the pack with random N cards up to 7.
+                while (pack.Count < 7)
+                {
+                    //choose a random N card from the entirety of Series 1
+                    randomCard = Series1NCards[UnityEngine.Random.Range(0, Series1NCards.Count - 1)];
+
+                    //ensure that we choose a card that's not already in the pack
+                    if (!pack.Contains(randomCard))
+                    {
+                        pack.Enqueue(randomCard);
+                    }
+                }              
 
             }
+
+            //print the list of added cards to check
+            //return the list
 
             //TODO Remove
             //return CipherData.CardID.GetValues(typeof(CipherData.CardID));
 
-            //start to fill up individual "packs" and put them into a "box"
         }
-        */
-
+                */
         //private List<CipherCardData> CreateCardDataList(List<CipherData.CardID>)
 
         private CipherCardData LoadCardData(CipherData.CardID cardID)
