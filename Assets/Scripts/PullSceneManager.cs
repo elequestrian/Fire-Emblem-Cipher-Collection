@@ -17,6 +17,7 @@ namespace Com.SakuraStudios.FECipherCollection
         List<CipherCardData> cardDataList = new List<CipherCardData>();
         List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
         List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
+        Queue<CipherData.CardID> currentSeries1Box = new Queue<CipherData.CardID>();
         bool pulledOnce = false;
 
         #region Unity Callbacks
@@ -32,7 +33,7 @@ namespace Com.SakuraStudios.FECipherCollection
 
                 if (cardData != null)
                 {
-                    Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
+                    //Debug.Log(cardData.ToString() + " Rarity: " + cardData.cardRarity.ToString());
 
                     //this is a list of actual cards that exist
                     cardDataList.Add(cardData);
@@ -65,7 +66,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
             }
 
-            
+            currentSeries1Box = CreateSeries1Box();
 
         }
 
@@ -152,8 +153,7 @@ namespace Com.SakuraStudios.FECipherCollection
             }
         }
 
-        /*
-        private List<CipherData.CardID> CreateSeries1Box()
+        private Queue<CipherData.CardID> CreateSeries1Box()
         {
             // Create a list of all Series 1 cards
             List<CipherCardData> allSeries1Cards = new List<CipherCardData>();
@@ -231,17 +231,37 @@ namespace Com.SakuraStudios.FECipherCollection
                         pack.Enqueue(randomCard);
                     }
                 }              
-
+                */
             }
 
             //print the list of added cards to check
-            //return the list
+            Debug.Log("List of cards in packs: ");
+            int n = 1;
+            foreach (Queue<CipherCardData> pack in cipherPackBox)
+            {
+                Debug.Log("Pack " + n + ": ");
+                foreach (CipherCardData card in pack)
+                {
+                    Debug.Log(card.cardID.ToString());
+                }
+                n++;
+            }
 
-            //TODO Remove
-            //return CipherData.CardID.GetValues(typeof(CipherData.CardID));
 
+            //return the list of all cards in the box.
+            Queue<CipherData.CardID> finalBoxQueue = new Queue<CipherData.CardID>();
+            foreach (Queue<CipherCardData> pack in cipherPackBox)
+            {
+                n = pack.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    finalBoxQueue.Enqueue(pack.Dequeue().cardID);
+                }              
+            }
+
+            return finalBoxQueue;
         }
-                */
+
         //private List<CipherCardData> CreateCardDataList(List<CipherData.CardID>)
 
         private CipherCardData LoadCardData(CipherData.CardID cardID)
