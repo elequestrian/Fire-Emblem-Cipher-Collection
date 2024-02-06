@@ -172,7 +172,8 @@ namespace Com.SakuraStudios.FECipherCollection
             List<CipherCardData> Series1HNCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.HN);
             List<CipherCardData> Series1RCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.R);
             List<CipherCardData> Series1SRCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.SR);
-            List<CipherCardData> Series1PlusCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.Rp || card.cardRarity == CipherData.CardRarity.SRp);
+            List<CipherCardData> Series1RPlusCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.Rp);
+            List<CipherCardData> Series1SRPlusCards = allSeries1Cards.FindAll(card => card.cardRarity == CipherData.CardRarity.SRp);
 
             //Create a list (box) of 16 queues (packs)
             List<Queue<CipherCardData>> cipherPackBox = new List<Queue<CipherCardData>>(16);
@@ -182,16 +183,37 @@ namespace Com.SakuraStudios.FECipherCollection
                 cipherPackBox.Add(cipherCardPack);
             }
 
-            //Create a duplicate of the N card list to use as a tracker/checklist
+            //Create a duplicate of the N and HN card list to use as a tracker/checklist
             List<CipherCardData> NCardTracker = Series1NCards.ToList();
+            List<CipherCardData> HNCardTracker = Series1HNCards.ToList();
 
             //calculate the number of cards to add to each pack from the tracker; also calculate the remainder of any cards left over.
             int NCardsRemainder;
             int NCardsPerPack = Math.DivRem(NCardTracker.Count, 16, out NCardsRemainder);
+            int HNCardsRemainder;
+            int HNCardsPerPack = Math.DivRem(HNCardTracker.Count, 16, out HNCardsRemainder);
 
-            Debug.Log("Number of N cards: " + NCardTracker.Count + "; NCardsPerPack value: " + NCardsPerPack + "; NCardsRemainder: " + NCardsRemainder);
-            Debug.Log("List of N Cards: ");
-            foreach (CipherCardData card in NCardTracker)
+
+            //Debug work to list all of the holo cards
+            Debug.Log("Number of R cards: " + Series1RCards.Count + "; Number of SR cards: " + Series1SRCards.Count + "; Number of R+ cards: " + Series1RPlusCards.Count
+                + "; Number of SR+ cards: " + Series1SRPlusCards.Count);
+            Debug.Log("List of R Cards: ");
+            foreach (CipherCardData card in Series1RCards)
+            {
+                Debug.Log(card.cardID.ToString());
+            }
+            Debug.Log("List of SR Cards: ");
+            foreach (CipherCardData card in Series1SRCards)
+            {
+                Debug.Log(card.cardID.ToString());
+            }
+            Debug.Log("List of R+ Cards: ");
+            foreach (CipherCardData card in Series1RPlusCards)
+            {
+                Debug.Log(card.cardID.ToString());
+            }
+            Debug.Log("List of SR+ Cards: ");
+            foreach (CipherCardData card in Series1SRPlusCards)
             {
                 Debug.Log(card.cardID.ToString());
             }
@@ -217,8 +239,7 @@ namespace Com.SakuraStudios.FECipherCollection
                     NCardTracker.Remove(randomCard);
                     NCardsRemainder--;
                 }
-
-                /* hold till the above is tested.
+               
                 //Fill the rest of the pack with random N cards up to 7.
                 while (pack.Count < 7)
                 {
@@ -231,7 +252,41 @@ namespace Com.SakuraStudios.FECipherCollection
                         pack.Enqueue(randomCard);
                     }
                 }              
-                */
+                
+            }
+
+            //fill each pack with the correct number of HN cards
+            foreach (Queue<CipherCardData> pack in cipherPackBox)
+            {
+                //fill with a certain number of tracked cards
+                for (int i = 0; i < HNCardsPerPack; i++)
+                {
+                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count - 1)];
+                    pack.Enqueue(randomCard);
+                    HNCardTracker.Remove(randomCard);
+                }
+
+                //Add 1 extra tracked card if needed.
+                if (HNCardsRemainder > 0)
+                {
+                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count - 1)];
+                    pack.Enqueue(randomCard);
+                    HNCardTracker.Remove(randomCard);
+                    HNCardsRemainder--;
+                }
+
+                //Fill the rest of the pack with random HN cards up to 9.
+                while (pack.Count < 9)
+                {
+                    //choose a random HN card from the entirety of Series 1
+                    randomCard = Series1HNCards[UnityEngine.Random.Range(0, Series1HNCards.Count - 1)];
+
+                    //ensure that we choose a card that's not already in the pack
+                    if (!pack.Contains(randomCard))
+                    {
+                        pack.Enqueue(randomCard);
+                    }
+                }
             }
 
             //print the list of added cards to check
