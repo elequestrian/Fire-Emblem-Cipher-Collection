@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N005
+  m_Name: B01N069
   m_EditorClassIdentifier: 
-  cardID: 8
+  cardID: 91
   cardRarity: 0
   altArtIDs: 
-  cardNumber: B01-005N
-  charTitle: Soul-Soothing Wings
-  charQuote: '"Leave this rabble. Lend your sword to our cause."'
-  cardIllustrator: Mayo
+  cardNumber: B01-069N
+  charTitle: Maid of Flowers
+  charQuote: '"He loves me... He loves me not..."'
+  cardIllustrator: Dokkoi
   cardSkills:
-  - Wing Spear [ALWAYS] If this unit is attacking a <Beast> or <Armored> unit, this
-    unit gains +20 attack.
   - Winged Deliverer [ACT] [TAP] Choose 1 other ally, and move them.
-  skillTypes: 000000000000000000000000000000
-  charName: Caeda
+  - '[ATK] Elysian Emblem [SUPP] Choose 1 ally other than your attacking unit. You
+    may move that ally.'
+  skillTypes: 010000000000000000000000000000
+  charName: Sumia
   classTitle: Pegasus Knight
-  deploymentCost: 2
+  deploymentCost: 1
   canPromote: 0
   promotionCost: 0
-  cardColor: 0100000000000000
+  cardColor: 0001000000000000
   charGender: 0001
   charWeaponType: 00010000000000000000
   unitTypes: 000101000000
-  baseAttack: 40
+  baseAttack: 30
   baseSupport: 30
   baseRange: 010000

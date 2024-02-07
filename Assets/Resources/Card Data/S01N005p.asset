@@ -20,7 +20,7 @@ MonoBehaviour:
   charQuote: '"Will it be tears or blood you weep first?"'
   cardIllustrator: yuma
   cardSkills:
-  - Killing Edge [ACT] [FLIP 3] Until the end of the turn, this card's attacks cannot
+  - Killing Edge [ACT] [FLIP 3] Until the end of the turn, this unit's attacks cannot
     be evaded.
   - Aloof Swordsman [ALWAYS] If you have no allies other than this unit and your
     Main Character, this unit gains +10 attack.

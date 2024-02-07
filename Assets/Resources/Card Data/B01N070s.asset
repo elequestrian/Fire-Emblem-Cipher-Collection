@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: S01N005
+  m_Name: B01N070s
   m_EditorClassIdentifier: 
-  cardID: 149
+  cardID: 94
   cardRarity: 10
-  altArtIDs: 96000000
-  cardNumber: S01-005ST
-  charTitle: Wielder of a Killing Edge
-  charQuote: '"Will it be tears or blood you weep first?"'
-  cardIllustrator: yuma
+  altArtIDs: 5d0000005c000000
+  cardNumber: B01-070ST
+  charTitle: Solitary Blade
+  charQuote: '"Were you unworthy, I would have left long ago."'
+  cardIllustrator: Clover K
   cardSkills:
+  - '[Class Change Skill] Swordfaire [ALWAYS] This unit gains +10 attack per other
+    Sword ally. (Class Change Skill is only active if this unit is Class Changed.)'
   - Killing Edge [ACT] [FLIP 3] Until the end of the turn, this unit's attacks cannot
     be evaded.
-  - Aloof Swordsman [ALWAYS] If you have no allies other than this unit and your
-    Main Character, this unit gains +10 attack.
-  skillTypes: 000000000000000000000000000000
-  charName: Navarre
+  skillTypes: 000100000000000000000000000000
+  charName: Lon'qu
   classTitle: Swordmaster
   deploymentCost: 3
   canPromote: 1
   promotionCost: 2
-  cardColor: 0100000000000000
+  cardColor: 0001000000000000
   charGender: 0100
   charWeaponType: 01000000000000000000
   unitTypes: 000000000000
-  baseAttack: 60
+  baseAttack: 50
   baseSupport: 10
   baseRange: 010000

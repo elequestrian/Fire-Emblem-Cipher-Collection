@@ -10,30 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d51b5ffac2fe544bbb1d44ca699e3ee, type: 3}
-  m_Name: B01N099
+  m_Name: B01N078
   m_EditorClassIdentifier: 
-  cardID: 125
-  cardRarity: 1
+  cardID: 102
+  cardRarity: 2
   altArtIDs: 
-  cardNumber: B01-099HN
-  charTitle: Divine Voice
-  charQuote: '"I... I was lost in endless sleep..."'
-  cardIllustrator: cuboon
+  cardNumber: B01-078R
+  charTitle: Eternal Youth
+  charQuote: '"I trust Chrom and Robin to do their egghead jobs, and they trust me
+    to fight."'
+  cardIllustrator: Pisuke
   cardSkills:
-  - Voice of the Divine Dragon [ACT] [Once Per Turn] [FLIP 2] Choose 1 card from
-    your hand, and place it in your Bond Area.
-  - Longevous Dragon Tribe [ALWAYS] If you have 5 or more Bond cards, this unit gains
-    +30 attack
+  - Immature Dragon [TRIGGER] At the end of your turn, choose 1 of your Bond cards,
+    and add it to your hand.
+  - Longevous Dragon Tribe [ALWAYS] If you have 6 or more Bond cards, this unit gains
+    +30 attack.
   skillTypes: 000000000000000000000000000000
-  charName: Tiki
+  charName: Nowi
   classTitle: Manakete
-  deploymentCost: 2
+  deploymentCost: 3
   canPromote: 0
   promotionCost: 0
   cardColor: 0001000000000000
   charGender: 0001
   charWeaponType: 00000000000000010000
   unitTypes: 000000010000
-  baseAttack: 30
+  baseAttack: 50
   baseSupport: 20
   baseRange: 010100
