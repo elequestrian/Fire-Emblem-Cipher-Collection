@@ -193,7 +193,7 @@ namespace Com.SakuraStudios.FECipherCollection
             int HNCardsRemainder;
             int HNCardsPerPack = Math.DivRem(HNCardTracker.Count, 16, out HNCardsRemainder);
 
-
+            /*
             //Debug work to list all of the holo cards
             Debug.Log("Number of R cards: " + Series1RCards.Count + "; Number of SR cards: " + Series1SRCards.Count + "; Number of R+ cards: " + Series1RPlusCards.Count
                 + "; Number of SR+ cards: " + Series1SRPlusCards.Count);
@@ -217,6 +217,7 @@ namespace Com.SakuraStudios.FECipherCollection
             {
                 Debug.Log(card.cardID.ToString());
             }
+            */
 
             CipherCardData randomCard;
 
@@ -289,6 +290,56 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
             }
 
+            //Add holo card to each pack
+            //track SR cards to add to the box
+            int SRCardsToAdd = 4;
+
+            //Track added cards to ensure what's added is unique
+            List<CipherCardData> addedHoloCards = new List<CipherCardData>();
+
+            //add an SR+ (25% chance) or an R+ to the first pack
+            if (UnityEngine.Random.value < 0.25f)
+            {
+                randomCard = Series1SRPlusCards[UnityEngine.Random.Range(0, Series1SRPlusCards.Count - 1)];               
+                SRCardsToAdd--;
+            }
+            else
+            {
+                randomCard = Series1RPlusCards[UnityEngine.Random.Range(0, Series1RPlusCards.Count - 1)];
+            }
+            cipherPackBox[0].Enqueue(randomCard);
+            addedHoloCards.Add(randomCard);
+
+            //add remaining SR cards and then fill the rest of the box with R cards
+            for (int i = 1; i < cipherPackBox.Count; i++)
+            {
+                //loop on the pack until an unique card is chosen and added.
+                while (cipherPackBox[i].Count < 10)
+                {
+                    if (SRCardsToAdd > 0)
+                    {
+                        randomCard = Series1SRCards[UnityEngine.Random.Range(0, Series1SRCards.Count - 1)];
+                        if (!addedHoloCards.Contains(randomCard))
+                        {
+                            cipherPackBox[i].Enqueue(randomCard);
+                            addedHoloCards.Add(randomCard);
+                            SRCardsToAdd--;
+                        }
+                    }
+                    else
+                    {
+                        randomCard = Series1RCards[UnityEngine.Random.Range(0, Series1RCards.Count - 1)];
+                        if (!addedHoloCards.Contains(randomCard))
+                        {
+                            cipherPackBox[i].Enqueue(randomCard);
+                            addedHoloCards.Add(randomCard);
+                        }
+                    }
+                }
+            }
+
+
+            /*
             //print the list of added cards to check
             Debug.Log("List of cards in packs: ");
             int n = 1;
@@ -301,7 +352,16 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
                 n++;
             }
+            */
 
+            //print the list of added holo cards to check
+            Debug.Log("List of cards in packs: ");
+            foreach (CipherCardData card in addedHoloCards)
+            {
+                Debug.Log(card.cardID.ToString());
+            }
+
+            int n;
 
             //return the list of all cards in the box.
             Queue<CipherData.CardID> finalBoxQueue = new Queue<CipherData.CardID>();
