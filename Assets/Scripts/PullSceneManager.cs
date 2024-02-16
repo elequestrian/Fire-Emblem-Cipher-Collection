@@ -14,9 +14,9 @@ namespace Com.SakuraStudios.FECipherCollection
         [SerializeField] private Transform[] cardLocationArray = new Transform[10];
         [SerializeField] private CardObjectPool cardObjectPool;
 
-        List<CipherCardData> cardDataList = new List<CipherCardData>();
-        List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
-        List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
+        //List<CipherCardData> cardDataList = new List<CipherCardData>();
+        //List<CipherData.CardID> lowerTierCards = new List<CipherData.CardID>();
+        //List<CipherData.CardID> upperTierCards = new List<CipherData.CardID>();
         Queue<CipherData.CardID> currentSeries1Box = new Queue<CipherData.CardID>();
         bool pulledOnce = false;
 
@@ -26,6 +26,7 @@ namespace Com.SakuraStudios.FECipherCollection
         void Start()
         {
 
+            /*
             // Fill up the card data list
             foreach (CipherData.CardID cardID in CipherData.CardID.GetValues(typeof(CipherData.CardID)))
             {
@@ -65,8 +66,16 @@ namespace Com.SakuraStudios.FECipherCollection
                     }              
                 }
             }
+            */
 
             currentSeries1Box = CreateSeries1Box();
+
+            //print the list of cards to debug
+            Debug.Log("List of cards in packs: ");
+            foreach (CipherData.CardID cardID in currentSeries1Box)
+            {
+                Debug.Log(cardID.ToString());
+            }
 
         }
 
@@ -90,6 +99,27 @@ namespace Com.SakuraStudios.FECipherCollection
             //Turn off the button
             packButton.interactable = false;
 
+            //Check that there are enough cards in the current box.
+            if (currentSeries1Box.Count < 10)
+            {
+                if (currentSeries1Box.Count != 0)
+                    Debug.LogError("currentSeries1Box has and unexpected number of cards.  currentSeries1Box.Count = " + currentSeries1Box.Count);
+                currentSeries1Box = CreateSeries1Box();
+            }
+
+            //Pull 10 cards
+            for (int i = 0; i < 10; i++)
+            {
+                cardObjectPool.GetCard(currentSeries1Box.Dequeue(), cardLocationArray[i]);
+            }
+
+            pulledOnce = true;
+
+            //Turn the button back on
+            packButton.interactable = true;
+
+
+            /*
             //Randomize the pack
             List<CipherData.CardID> packCards = new List<CipherData.CardID>(9);
 
@@ -97,9 +127,9 @@ namespace Com.SakuraStudios.FECipherCollection
             {
                 //choose 5 lower tier cards, then 5 higher tier cards
                 if (i <= 4)
-                    packCards.Add(lowerTierCards[UnityEngine.Random.Range(0, lowerTierCards.Count - 1)]);
+                    packCards.Add(lowerTierCards[UnityEngine.Random.Range(0, lowerTierCards.Count)]);
                 else
-                    packCards.Add(upperTierCards[UnityEngine.Random.Range(0, upperTierCards.Count - 1)]);
+                    packCards.Add(upperTierCards[UnityEngine.Random.Range(0, upperTierCards.Count)]);
             }
 
             //Load cards
@@ -123,11 +153,7 @@ namespace Com.SakuraStudios.FECipherCollection
             LoadCard(packCards[8], new Vector3(3.5f, 2, 0));
             LoadCard(packCards[9], new Vector3(7, 2, 0));
             */
-            
-            pulledOnce = true;
 
-            //Turn the button back on
-            packButton.interactable = true;
         }
 
         #endregion
@@ -227,7 +253,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //fill with a certain number of tracked cards
                 for (int i = 0; i < NCardsPerPack; i++)
                 {
-                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count - 1)];
+                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count)];
                     pack.Enqueue(randomCard);
                     NCardTracker.Remove(randomCard);
                 }
@@ -235,7 +261,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //Add 1 extra tracked card if needed.
                 if (NCardsRemainder > 0)
                 {
-                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count - 1)];
+                    randomCard = NCardTracker[UnityEngine.Random.Range(0, NCardTracker.Count)];
                     pack.Enqueue(randomCard);
                     NCardTracker.Remove(randomCard);
                     NCardsRemainder--;
@@ -245,7 +271,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 while (pack.Count < 7)
                 {
                     //choose a random N card from the entirety of Series 1
-                    randomCard = Series1NCards[UnityEngine.Random.Range(0, Series1NCards.Count - 1)];
+                    randomCard = Series1NCards[UnityEngine.Random.Range(0, Series1NCards.Count)];
 
                     //ensure that we choose a card that's not already in the pack
                     if (!pack.Contains(randomCard))
@@ -262,7 +288,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //fill with a certain number of tracked cards
                 for (int i = 0; i < HNCardsPerPack; i++)
                 {
-                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count - 1)];
+                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count)];
                     pack.Enqueue(randomCard);
                     HNCardTracker.Remove(randomCard);
                 }
@@ -270,7 +296,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 //Add 1 extra tracked card if needed.
                 if (HNCardsRemainder > 0)
                 {
-                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count - 1)];
+                    randomCard = HNCardTracker[UnityEngine.Random.Range(0, HNCardTracker.Count)];
                     pack.Enqueue(randomCard);
                     HNCardTracker.Remove(randomCard);
                     HNCardsRemainder--;
@@ -280,7 +306,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 while (pack.Count < 9)
                 {
                     //choose a random HN card from the entirety of Series 1
-                    randomCard = Series1HNCards[UnityEngine.Random.Range(0, Series1HNCards.Count - 1)];
+                    randomCard = Series1HNCards[UnityEngine.Random.Range(0, Series1HNCards.Count)];
 
                     //ensure that we choose a card that's not already in the pack
                     if (!pack.Contains(randomCard))
@@ -300,12 +326,12 @@ namespace Com.SakuraStudios.FECipherCollection
             //add an SR+ (25% chance) or an R+ to the first pack
             if (UnityEngine.Random.value < 0.25f)
             {
-                randomCard = Series1SRPlusCards[UnityEngine.Random.Range(0, Series1SRPlusCards.Count - 1)];               
+                randomCard = Series1SRPlusCards[UnityEngine.Random.Range(0, Series1SRPlusCards.Count)];               
                 SRCardsToAdd--;
             }
             else
             {
-                randomCard = Series1RPlusCards[UnityEngine.Random.Range(0, Series1RPlusCards.Count - 1)];
+                randomCard = Series1RPlusCards[UnityEngine.Random.Range(0, Series1RPlusCards.Count)];
             }
             cipherPackBox[0].Enqueue(randomCard);
             addedHoloCards.Add(randomCard);
@@ -318,7 +344,7 @@ namespace Com.SakuraStudios.FECipherCollection
                 {
                     if (SRCardsToAdd > 0)
                     {
-                        randomCard = Series1SRCards[UnityEngine.Random.Range(0, Series1SRCards.Count - 1)];
+                        randomCard = Series1SRCards[UnityEngine.Random.Range(0, Series1SRCards.Count)];
                         if (!addedHoloCards.Contains(randomCard))
                         {
                             cipherPackBox[i].Enqueue(randomCard);
@@ -328,7 +354,7 @@ namespace Com.SakuraStudios.FECipherCollection
                     }
                     else
                     {
-                        randomCard = Series1RCards[UnityEngine.Random.Range(0, Series1RCards.Count - 1)];
+                        randomCard = Series1RCards[UnityEngine.Random.Range(0, Series1RCards.Count)];
                         if (!addedHoloCards.Contains(randomCard))
                         {
                             cipherPackBox[i].Enqueue(randomCard);
@@ -352,7 +378,6 @@ namespace Com.SakuraStudios.FECipherCollection
                 }
                 n++;
             }
-            */
 
             //print the list of added holo cards to check
             Debug.Log("List of cards in packs: ");
@@ -360,20 +385,25 @@ namespace Com.SakuraStudios.FECipherCollection
             {
                 Debug.Log(card.cardID.ToString());
             }
+            */
 
+            //return the list of all cards in the box randomizing the packs chosen.
+            Queue<CipherData.CardID> finalBoxQueue = new Queue<CipherData.CardID>();
+            int m = cipherPackBox.Count;
+            Queue<CipherCardData> packToEmpty;
             int n;
 
-            //return the list of all cards in the box.
-            Queue<CipherData.CardID> finalBoxQueue = new Queue<CipherData.CardID>();
-            foreach (Queue<CipherCardData> pack in cipherPackBox)
+            for (int i = 0; i < m; i++)
             {
-                n = pack.Count;
-                for (int i = 0; i < n; i++)
+                packToEmpty = cipherPackBox[UnityEngine.Random.Range(0, cipherPackBox.Count)];
+                n = packToEmpty.Count;
+                for (int j = 0; j < n; j++)
                 {
-                    finalBoxQueue.Enqueue(pack.Dequeue().cardID);
-                }              
+                    finalBoxQueue.Enqueue(packToEmpty.Dequeue().cardID);
+                }
+                cipherPackBox.Remove(packToEmpty);
             }
-
+            
             return finalBoxQueue;
         }
 
