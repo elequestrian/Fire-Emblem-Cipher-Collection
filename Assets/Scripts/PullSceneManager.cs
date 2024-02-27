@@ -214,10 +214,8 @@ namespace Com.SakuraStudios.FECipherCollection
             List<CipherCardData> HNCardTracker = Series1HNCards.ToList();
 
             //calculate the number of cards to add to each pack from the tracker; also calculate the remainder of any cards left over.
-            int NCardsRemainder;
-            int NCardsPerPack = Math.DivRem(NCardTracker.Count, 16, out NCardsRemainder);
-            int HNCardsRemainder;
-            int HNCardsPerPack = Math.DivRem(HNCardTracker.Count, 16, out HNCardsRemainder);
+            int NCardsRemainder, NCardsPerPack = Math.DivRem(NCardTracker.Count, 16, out NCardsRemainder);
+            int HNCardsRemainder, HNCardsPerPack = Math.DivRem(HNCardTracker.Count, 16, out HNCardsRemainder);
 
             /*
             //Debug work to list all of the holo cards

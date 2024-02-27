@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 94
   cardRarity: 10
-  altArtIDs: 5d0000005c000000
+  altArtIDs: 5c0000005d000000
   cardNumber: B01-070ST
   charTitle: Solitary Blade
   charQuote: '"Were you unworthy, I would have left long ago."'

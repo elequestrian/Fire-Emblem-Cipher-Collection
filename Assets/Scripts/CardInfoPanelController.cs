@@ -12,6 +12,8 @@ namespace Com.SakuraStudios.FECipherCollection
     {
         public static CardInfoPanelController Instance = null;                      // The instance reference to this script as it is a singleton pattern.
 
+        private Queue<CipherData.CardID> altArtQueue = new Queue<CipherData.CardID>();
+
         [SerializeField] private BasicCard displayCard;             //The main card image of the panel.
         [SerializeField] private TextMeshProUGUI displayText;       //The display text of the InfoPanel.
         [SerializeField] private Scrollbar cardTextScrollbar;
@@ -448,12 +450,43 @@ namespace Com.SakuraStudios.FECipherCollection
         {
             if (displayCard.GetCardData.altArtIDs != null)
             {
+                // save the current scroll bar position 
                 float scrollBarPosition = cardTextScrollbar.value;
 
-                displayCard.SetUp(displayCard.GetCardData.altArtIDs[0]);
-                DisplayCard(displayCard);
+                // check if this is the first time we're clicking this button for this set of alt art cards
+                if (!altArtQueue.Contains(displayCard.GetCardData.cardID))
+                {
+                    // Create a list of alt art IDs with the current card at the end.
+                    altArtQueue.Clear();
+                    foreach (CipherData.CardID cardID in displayCard.GetCardData.altArtIDs)
+                    {
+                        altArtQueue.Enqueue(cardID);
+                    }
+                    altArtQueue.Enqueue(displayCard.GetCardData.cardID);
+                }
+                // This is not the first time we've clicked this button
+                else
+                {
+                    // Double-check that the next item in the queue isn't the current card and cycle the queue if so
+                    if (altArtQueue.Peek() == displayCard.GetCardData.cardID)
+                    {
+                        altArtQueue.Enqueue(altArtQueue.Dequeue());
+                    }
+                }
 
-                // Set the scroll bar to the top of the card's information.
+                // set the display card to the desired alt art and trigger a translation redo.
+                displayCard.SetUp(altArtQueue.Dequeue());
+                
+                // Format the card's information and store it to be displayed.
+                if (displayCard.GetCardData.cardRarity != CipherData.CardRarity.M)
+                    displayText.text = TranslateCard(displayCard);
+                else
+                    displayText.text = "";
+
+                // Put the current card ID back at the end of the queue. 
+                altArtQueue.Enqueue(displayCard.GetCardData.cardID);
+
+                // Set the scroll bar to the same place on the alt card's information.
                 cardTextScrollbar.value = scrollBarPosition;
             }
         }

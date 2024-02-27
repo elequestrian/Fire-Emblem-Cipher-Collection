@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 78
   cardRarity: 10
-  altArtIDs: 4d0000004c000000
+  altArtIDs: 4c0000004d000000
   cardNumber: B01-059ST
   charTitle: Princess of Ylisse
   charQuote: '"Well, that''s that..."'
